@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://dibtl3r5ixqt0"]
+
+[ext_resource type="PackedScene" uid="uid://bsg6rybm557fg" path="res://Scenes/draganddropdemo.tscn" id="1_3a7k1"]
+[ext_resource type="Texture2D" uid="uid://co2dn7r1j8v03" path="res://icon.svg" id="2_rtuy1"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="TextureRect" parent="." instance=ExtResource("1_3a7k1")]
+texture = ExtResource("2_rtuy1")
+
+[node name="TextureRect" parent="TextureRect" instance=ExtResource("1_3a7k1")]
+offset_left = 244.0
+offset_top = 1.0
+offset_right = 344.0
+offset_bottom = 101.0
