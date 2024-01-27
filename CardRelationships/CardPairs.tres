@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="CardPairs" load_steps=2 format=3 uid="uid://ce1rnnislk1in"]
+
+[ext_resource type="Script" path="res://Scripts/cardPairsResource.gd" id="1_brafy"]
+
+[resource]
+script = ExtResource("1_brafy")
+cards = Array[Resource("res://Scripts/cardResource.gd")]([])
