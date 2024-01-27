@@ -5,3 +5,4 @@
 [resource]
 script = ExtResource("1_6eixw")
 word = "Gate"
+type = 1

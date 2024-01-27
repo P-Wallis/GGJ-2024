@@ -5,3 +5,4 @@
 [resource]
 script = ExtResource("1_5xg1t")
 word = "Theft"
+type = 3
