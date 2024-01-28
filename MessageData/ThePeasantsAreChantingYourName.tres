@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="MessageResource" load_steps=8 format=3 uid="uid://2lavm0c3jywr"]
+
+[ext_resource type="Resource" uid="uid://tipaxx2gi4wb" path="res://CardData/Fields.tres" id="1_5ops7"]
+[ext_resource type="Resource" uid="uid://bcvdfpaapb6mw" path="res://CardData/Peasants.tres" id="4_1ykas"]
+[ext_resource type="Resource" uid="uid://dwoyb72dui4b0" path="res://CardData/Queen.tres" id="5_2b3y8"]
+[ext_resource type="Resource" uid="uid://cifc1lpx60gyi" path="res://CardData/King.tres" id="5_2wru1"]
+[ext_resource type="Resource" uid="uid://dyr7xg0h5t7u8" path="res://CardData/Sing.tres" id="6_tb880"]
+[ext_resource type="Resource" uid="uid://fnconu0fn64b" path="res://CardData/Gate.tres" id="9_qyti3"]
+[ext_resource type="Script" path="res://Scripts/messageResource.gd" id="10_5e2xt"]
+
+[resource]
+script = ExtResource("10_5e2xt")
+message = "The peasants are chanting for you"
+successMessage = "Excellent! I will greet them and bask in my glory "
+difficulty = 1
+requiredCards = Array[Resource("res://Scripts/cardResource.gd")]([ExtResource("4_1ykas"), ExtResource("5_2wru1"), ExtResource("6_tb880")])
+optionalCards = Array[Resource("res://Scripts/cardResource.gd")]([ExtResource("1_5ops7"), ExtResource("5_2b3y8"), ExtResource("9_qyti3")])
