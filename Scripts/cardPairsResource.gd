@@ -362,7 +362,7 @@ var pairs : Array[Dictionary] = [
 	{
 	"cards": [3, 9],
 	"name": "Bathroom + King",
-	"idea": "my long baths",
+	"idea": "my bathing habits",
 	"emotion": Emotion.OFFENDED
 	},
 	{
@@ -866,7 +866,7 @@ var pairs : Array[Dictionary] = [
 	{
 	"cards": [9, 18],
 	"name": "King + Vikings",
-	"idea": "my diplomacy with the Vikings",
+	"idea": "diplomacy with the Vikings",
 	"emotion": Emotion.OFFENDED
 	},
 	{

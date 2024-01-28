@@ -17,6 +17,7 @@ var chooseUI:CardsAndSlotsUI
 var thoughtUI:ThoughtBubbleUI
 var optionsUI:ReactionOptionsUI
 var jester:Jester
+var king:King
 var messageCount = 0
 
 var cards:Array[Card]
@@ -27,6 +28,7 @@ func _ready():
 	thoughtUI = $thought_bubble_ui
 	optionsUI = $reaction_options_ui
 	jester = $Jester
+	king = $King
 	
 	chooseUI.init(self)
 	
@@ -57,6 +59,7 @@ func GoToPhase(newPhase:LevelPhase):
 	chooseUI.visible = false
 	thoughtUI.visible = false
 	optionsUI.visible = false
+	king.reset()
 	
 	match (phase):
 		LevelPhase.MESSAGE:
@@ -83,8 +86,10 @@ func GoToPhase(newPhase:LevelPhase):
 			thoughtUI.visible = true
 			thoughtUI.ShowKingThought(cards, messages[messageCount])
 			optionsUI.visible = true
+			var success = messages[messageCount].DoCardsMatchTheMessage(cards)
+			king.playResponse(success, cardPairs.GetEmotionInfo(cards)["mood"])
 			
-			if(messages[messageCount].DoCardsMatchTheMessage(cards)):
+			if(success):
 				# King success react
 				optionsUI.button.text = "Done"
 				if(optionsUI.button.pressed.is_connected(self.GoToPhaseChooseCards)):
