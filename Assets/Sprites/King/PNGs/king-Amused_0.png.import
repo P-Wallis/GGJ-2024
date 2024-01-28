@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cwcxc727le3ra"
-path="res://.godot/imported/King_PH.png-ea15eafaf74eab1fc0340c0573583458.ctex"
+uid="uid://bff7suggknhbj"
+path="res://.godot/imported/king-Amused_0.png-1851002405f0e3c01e24eaa277321b9a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/King_PH.png"
-dest_files=["res://.godot/imported/King_PH.png-ea15eafaf74eab1fc0340c0573583458.ctex"]
+source_file="res://Assets/Sprites/King/PNGs/king-Amused_0.png"
+dest_files=["res://.godot/imported/king-Amused_0.png-1851002405f0e3c01e24eaa277321b9a.ctex"]
 
 [params]
 

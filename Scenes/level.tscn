@@ -2,12 +2,12 @@
 
 [ext_resource type="Script" path="res://Scripts/levelManager.gd" id="1_l67pb"]
 [ext_resource type="Texture2D" uid="uid://j6mtetcsh4ch" path="res://Assets/Sprites/BGbackground.png" id="1_tdkdg"]
-[ext_resource type="Texture2D" uid="uid://cwcxc727le3ra" path="res://Assets/Sprites/King_PH.png" id="2_737ks"]
 [ext_resource type="Resource" uid="uid://b8uhwy5srtjuk" path="res://MessageData/VikingsAtGate.tres" id="2_sog57"]
 [ext_resource type="PackedScene" uid="uid://cawgtx8itufjp" path="res://Scenes/UIScenes/cards_and_slots_ui.tscn" id="4_8dvat"]
 [ext_resource type="PackedScene" uid="uid://dkdbhb5k75xx2" path="res://Scenes/UIScenes/message_ui.tscn" id="5_0apc2"]
-[ext_resource type="PackedScene" path="res://Scenes/UIScenes/thought_bubble_ui.tscn" id="7_wchay"]
+[ext_resource type="PackedScene" uid="uid://dui72aep4hato" path="res://Scenes/UIScenes/thought_bubble_ui.tscn" id="7_wchay"]
 [ext_resource type="PackedScene" uid="uid://cps5ihmajsylk" path="res://Scenes/UIScenes/reaction_options_ui.tscn" id="8_lt7mv"]
+[ext_resource type="PackedScene" uid="uid://c6k77gh1e57bu" path="res://Scenes/king.tscn" id="9_6pw06"]
 [ext_resource type="PackedScene" uid="uid://bdsqh086unyq7" path="res://Scenes/jester.tscn" id="9_e283u"]
 
 [node name="Level" type="Node2D"]
@@ -18,12 +18,6 @@ message = ExtResource("2_sog57")
 position = Vector2(0, -63)
 scale = Vector2(0.966667, 0.966667)
 texture = ExtResource("1_tdkdg")
-centered = false
-
-[node name="King" type="Sprite2D" parent="."]
-position = Vector2(0, 79.4843)
-scale = Vector2(0.916094, 0.916093)
-texture = ExtResource("2_737ks")
 centered = false
 
 [node name="message_ui" parent="." instance=ExtResource("5_0apc2")]
@@ -38,3 +32,6 @@ visible = false
 
 [node name="Jester" parent="." instance=ExtResource("9_e283u")]
 position = Vector2(1571, 957)
+
+[node name="King" parent="." instance=ExtResource("9_6pw06")]
+position = Vector2(572, 555)
