@@ -89,6 +89,7 @@ position = Vector2(676, 655)
 scale = Vector2(0.609181, 0.609181)
 sprite_frames = SubResource("SpriteFrames_et8vr")
 animation = &"Wave"
+autoplay = "Wave"
 frame_progress = 0.59695
 
 [node name="RichTextLabel" type="Label" parent="CanvasLayer/Control"]
