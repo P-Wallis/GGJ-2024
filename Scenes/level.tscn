@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" path="res://Scripts/levelManager.gd" id="1_l67pb"]
 [ext_resource type="Texture2D" uid="uid://j6mtetcsh4ch" path="res://Assets/Sprites/BGbackground.png" id="1_tdkdg"]
-[ext_resource type="Texture2D" uid="uid://cwcxc727le3ra" path="res://Assets/Sprites/King_PH.png" id="2_737ks"]
 [ext_resource type="Resource" uid="uid://b8uhwy5srtjuk" path="res://MessageData/VikingsAtGate.tres" id="2_tgdl4"]
 [ext_resource type="Resource" uid="uid://tcy7bt3xdtuj" path="res://MessageData/TheBaronTookYourMoney.tres" id="3_at1gl"]
 [ext_resource type="Resource" uid="uid://dc1mho6dto4lg" path="res://MessageData/TheQueenIsDead.tres" id="4_5kihh"]
@@ -10,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://dkdbhb5k75xx2" path="res://Scenes/UIScenes/message_ui.tscn" id="5_0apc2"]
 [ext_resource type="PackedScene" uid="uid://dui72aep4hato" path="res://Scenes/UIScenes/thought_bubble_ui.tscn" id="7_wchay"]
 [ext_resource type="PackedScene" uid="uid://cps5ihmajsylk" path="res://Scenes/UIScenes/reaction_options_ui.tscn" id="8_lt7mv"]
+[ext_resource type="PackedScene" uid="uid://c6k77gh1e57bu" path="res://Scenes/king.tscn" id="9_6pw06"]
 [ext_resource type="PackedScene" uid="uid://bdsqh086unyq7" path="res://Scenes/jester.tscn" id="9_e283u"]
 
 [node name="Level" type="Node2D" node_paths=PackedStringArray("levelNode")]
@@ -23,12 +23,6 @@ scale = Vector2(0.966667, 0.966667)
 texture = ExtResource("1_tdkdg")
 centered = false
 
-[node name="King" type="Sprite2D" parent="."]
-position = Vector2(0, 79.4843)
-scale = Vector2(0.916094, 0.916093)
-texture = ExtResource("2_737ks")
-centered = false
-
 [node name="message_ui" parent="." instance=ExtResource("5_0apc2")]
 visible = false
 
@@ -40,4 +34,7 @@ visible = false
 [node name="reaction_options_ui" parent="." instance=ExtResource("8_lt7mv")]
 
 [node name="Jester" parent="." instance=ExtResource("9_e283u")]
-position = Vector2(1427, 956)
+position = Vector2(1571, 957)
+
+[node name="King" parent="." instance=ExtResource("9_6pw06")]
+position = Vector2(572, 555)
