@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="Card" load_steps=2 format=3 uid="uid://cifc1lpx60gyi"]
+
+[ext_resource type="Script" path="res://Scripts/cardResource.gd" id="1_ju652"]
+
+[resource]
+script = ExtResource("1_ju652")
+word = "King"
+type = 0
