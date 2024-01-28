@@ -1,0 +1,26 @@
+[gd_scene load_steps=6 format=3 uid="uid://c3f584syo8l06"]
+
+[ext_resource type="Script" path="res://Scripts/intro.gd" id="1_5d4ec"]
+[ext_resource type="Texture2D" uid="uid://j6mtetcsh4ch" path="res://Assets/Sprites/BGbackground.png" id="3_rnd05"]
+[ext_resource type="PackedScene" uid="uid://dkdbhb5k75xx2" path="res://Scenes/UIScenes/message_ui.tscn" id="5_n5xkp"]
+[ext_resource type="PackedScene" uid="uid://cawgtx8itufjp" path="res://Scenes/UIScenes/cards_and_slots_ui.tscn" id="6_3vo72"]
+[ext_resource type="PackedScene" uid="uid://cps5ihmajsylk" path="res://Scenes/UIScenes/reaction_options_ui.tscn" id="8_tt6jx"]
+
+[node name="Intro" type="Node2D" node_paths=PackedStringArray("messageUI", "introParent")]
+script = ExtResource("1_5d4ec")
+messageUI = NodePath("message_ui")
+introParent = NodePath(".")
+
+[node name="BG" type="Sprite2D" parent="."]
+position = Vector2(0, -63)
+scale = Vector2(0.966667, 0.966667)
+texture = ExtResource("3_rnd05")
+centered = false
+
+[node name="message_ui" parent="." instance=ExtResource("5_n5xkp")]
+
+[node name="cards_and_slots_ui" parent="." instance=ExtResource("6_3vo72")]
+visible = false
+
+[node name="reaction_options_ui" parent="." instance=ExtResource("8_tt6jx")]
+visible = false
