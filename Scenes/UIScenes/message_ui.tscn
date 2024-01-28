@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://dkdbhb5k75xx2"]
+[gd_scene load_steps=8 format=3 uid="uid://dkdbhb5k75xx2"]
 
 [ext_resource type="Script" path="res://Scripts/UI/message_ui.gd" id="1_lh1aw"]
 [ext_resource type="Texture2D" uid="uid://lkg3bdsahs4n" path="res://Assets/Sprites/Cards UI/Hue_Saturation 2.png" id="2_31fbg"]
@@ -8,6 +8,33 @@
 font = ExtResource("3_bokix")
 font_size = 40
 font_color = Color(0.4, 0.12549, 0.101961, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b81rn"]
+bg_color = Color(0.399431, 0.124447, 0.100438, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_size = 3
+shadow_offset = Vector2(0, 3)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vbiuy"]
+bg_color = Color(0.278431, 0.0784314, 0.0588235, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_size = 3
+shadow_offset = Vector2(0, 3)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xr2je"]
+bg_color = Color(0.2, 0.0470588, 0.0313726, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_size = 3
+shadow_offset = Vector2(0, 3)
 
 [node name="message_ui" type="CanvasLayer"]
 script = ExtResource("1_lh1aw")
@@ -46,8 +73,13 @@ autowrap_mode = 3
 
 [node name="Button" type="Button" parent="Control/TextureRect"]
 layout_mode = 0
-offset_left = 729.0
-offset_top = 726.0
-offset_right = 808.0
-offset_bottom = 757.0
+offset_left = 554.0
+offset_top = 704.0
+offset_right = 816.0
+offset_bottom = 790.0
+theme_override_fonts/font = ExtResource("3_bokix")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_b81rn")
+theme_override_styles/hover = SubResource("StyleBoxFlat_vbiuy")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_xr2je")
 text = "Continue"
