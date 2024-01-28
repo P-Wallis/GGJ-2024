@@ -1,98 +1,273 @@
-[gd_scene load_steps=2 format=3 uid="uid://bdsqh086unyq7"]
+[gd_scene load_steps=42 format=3 uid="uid://bdsqh086unyq7"]
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_oh2h4"]
-load_path = "res://.godot/imported/shadow.png-1d106b38e544ff4f0d25d7fe0bd82123.ctex"
+[ext_resource type="Texture2D" uid="uid://djohehxrx75do" path="res://Assets/Sprites/Jester/PNGs/Jester-Baby_0.png" id="1_kvcdm"]
+[ext_resource type="Texture2D" uid="uid://con0ob5syl5ej" path="res://Assets/Sprites/Jester/PNGs/Jester-Baby_1.png" id="2_3crke"]
+[ext_resource type="Texture2D" uid="uid://t7mrdgg40wuf" path="res://Assets/Sprites/Jester/PNGs/Jester-Banana_0.png" id="3_qnogh"]
+[ext_resource type="Texture2D" uid="uid://bxjjwk4sh8wre" path="res://Assets/Sprites/Jester/PNGs/Jester-Banana_1.png" id="4_d17de"]
+[ext_resource type="Texture2D" uid="uid://cuyg4qs6wet6b" path="res://Assets/Sprites/Jester/PNGs/Jester-Baron_0.png" id="5_n2u3v"]
+[ext_resource type="Texture2D" uid="uid://1ew8xrlcs6a1" path="res://Assets/Sprites/Jester/PNGs/Jester-Baron_1.png" id="6_c5t0v"]
+[ext_resource type="Texture2D" uid="uid://bypf70vobxp7q" path="res://Assets/Sprites/Jester/PNGs/Jester-Bathroom_0.png" id="7_o7101"]
+[ext_resource type="Texture2D" uid="uid://v64x7rakahaj" path="res://Assets/Sprites/Jester/PNGs/Jester-Bathroom_1.png" id="8_omkwv"]
+[ext_resource type="Texture2D" uid="uid://bhmi5v61vdwq" path="res://Assets/Sprites/Jester/PNGs/Jester-Death_0.png" id="9_jf7vd"]
+[ext_resource type="Texture2D" uid="uid://brxdm11a8eka6" path="res://Assets/Sprites/Jester/PNGs/Jester-Death_1.png" id="10_xvvdy"]
+[ext_resource type="Texture2D" uid="uid://4fefkgdod5xu" path="res://Assets/Sprites/Jester/PNGs/Jester-Eat_0.png" id="11_svauf"]
+[ext_resource type="Texture2D" uid="uid://c4tmn8vp2bih5" path="res://Assets/Sprites/Jester/PNGs/Jester-Eat_1.png" id="12_kka6x"]
+[ext_resource type="Texture2D" uid="uid://cqfreo05u4kqo" path="res://Assets/Sprites/Jester/PNGs/Jester-Fields_0.png" id="13_fdn8t"]
+[ext_resource type="Texture2D" uid="uid://dq2r7ej5waqf2" path="res://Assets/Sprites/Jester/PNGs/Jester-Fields_1.png" id="14_yirod"]
+[ext_resource type="Texture2D" uid="uid://cgr2orniwmtcr" path="res://Assets/Sprites/Jester/PNGs/Jester-Fire_0.png" id="15_chdc6"]
+[ext_resource type="Texture2D" uid="uid://3nkc2mkwdfln" path="res://Assets/Sprites/Jester/PNGs/Jester-Fire_1.png" id="16_5pxy8"]
+[ext_resource type="Texture2D" uid="uid://woauo3bldpym" path="res://Assets/Sprites/Jester/PNGs/Jester-Gates_0.png" id="17_xsyvl"]
+[ext_resource type="Texture2D" uid="uid://bsgsc8iso2is5" path="res://Assets/Sprites/Jester/PNGs/Jester-Gates_1.png" id="18_ff042"]
+[ext_resource type="Texture2D" uid="uid://7nkvn50k1emd" path="res://Assets/Sprites/Jester/PNGs/Jester-Idle_0.png" id="19_8hlnr"]
+[ext_resource type="Texture2D" uid="uid://csj1vux6p6m8o" path="res://Assets/Sprites/Jester/PNGs/Jester-Idle_1.png" id="20_ggkyq"]
+[ext_resource type="Texture2D" uid="uid://bdir6gc26i3ec" path="res://Assets/Sprites/Jester/PNGs/Jester-King_0.png" id="21_bf2am"]
+[ext_resource type="Texture2D" uid="uid://c4ss32mvdewi3" path="res://Assets/Sprites/Jester/PNGs/Jester-King_1.png" id="22_igogu"]
+[ext_resource type="Texture2D" uid="uid://umbgxq2wusoj" path="res://Assets/Sprites/Jester/PNGs/Jester-Money_0.png" id="23_lqhvu"]
+[ext_resource type="Texture2D" uid="uid://b6jbkdre6wta6" path="res://Assets/Sprites/Jester/PNGs/Jester-Money_1.png" id="24_a5r23"]
+[ext_resource type="Texture2D" uid="uid://d3k55806o263o" path="res://Assets/Sprites/Jester/PNGs/Jester-Peasants_0.png" id="25_keumx"]
+[ext_resource type="Texture2D" uid="uid://f21ay623jqh4" path="res://Assets/Sprites/Jester/PNGs/Jester-Peasants_1.png" id="26_5vtmu"]
+[ext_resource type="Texture2D" uid="uid://jvwyux481vo4" path="res://Assets/Sprites/Jester/PNGs/Jester-Queen_0.png" id="27_b1q6a"]
+[ext_resource type="Texture2D" uid="uid://nkd0j2cd1a4n" path="res://Assets/Sprites/Jester/PNGs/Jester-Queen_1.png" id="28_8xvi4"]
+[ext_resource type="Texture2D" uid="uid://cb8vcg3kwp2tk" path="res://Assets/Sprites/Jester/PNGs/Jester-Sing_0.png" id="29_4nfgn"]
+[ext_resource type="Texture2D" uid="uid://dbwtuxatij2v6" path="res://Assets/Sprites/Jester/PNGs/Jester-Sing_1.png" id="30_mx2ha"]
+[ext_resource type="Texture2D" uid="uid://b07160fj20hru" path="res://Assets/Sprites/Jester/PNGs/Jester-Trip_0.png" id="31_5lvgn"]
+[ext_resource type="Texture2D" uid="uid://cj53udkgf1gpe" path="res://Assets/Sprites/Jester/PNGs/Jester-Trip_1.png" id="32_udnn5"]
+[ext_resource type="Texture2D" uid="uid://ds15wr1b0a8va" path="res://Assets/Sprites/Jester/PNGs/Jester-Theft_0.png" id="33_qhjp4"]
+[ext_resource type="Texture2D" uid="uid://di7tvdqhxfume" path="res://Assets/Sprites/Jester/PNGs/Jester-Theft_1.png" id="34_spu36"]
+[ext_resource type="Texture2D" uid="uid://gh6jchvcue2t" path="res://Assets/Sprites/Jester/PNGs/Jester-Treasury_0.png" id="35_0omvb"]
+[ext_resource type="Texture2D" uid="uid://bl75qs10h0v8d" path="res://Assets/Sprites/Jester/PNGs/Jester-Treasury_1.png" id="36_tj1fs"]
+[ext_resource type="Texture2D" uid="uid://cewchoebujjtw" path="res://Assets/Sprites/Jester/PNGs/Jester-Vickings_0.png" id="37_xmwsc"]
+[ext_resource type="Texture2D" uid="uid://cciixho68negc" path="res://Assets/Sprites/Jester/PNGs/Jester-Vickings_1.png" id="38_xujlj"]
+[ext_resource type="Texture2D" uid="uid://bm2mnpupn5gmy" path="res://Assets/Sprites/Jester/PNGs/Jester-Weapons_0.png" id="39_8iigu"]
+[ext_resource type="Texture2D" uid="uid://claiikd0mwhxp" path="res://Assets/Sprites/Jester/PNGs/Jester-Weapons_1.png" id="40_cjb8e"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nb5su"]
+animations = [{
+"frames": [{
+"duration": 2.0,
+"texture": ExtResource("1_kvcdm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_3crke")
+}],
+"loop": true,
+"name": &"Baby",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 2.0,
+"texture": ExtResource("3_qnogh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_d17de")
+}],
+"loop": true,
+"name": &"Banana",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 2.0,
+"texture": ExtResource("5_n2u3v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_c5t0v")
+}],
+"loop": true,
+"name": &"Baron",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 2.0,
+"texture": ExtResource("7_o7101")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_omkwv")
+}],
+"loop": true,
+"name": &"Bathroom",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 2.0,
+"texture": ExtResource("9_jf7vd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_xvvdy")
+}],
+"loop": true,
+"name": &"Death",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 2.0,
+"texture": ExtResource("11_svauf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_kka6x")
+}],
+"loop": true,
+"name": &"Eat",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 2.0,
+"texture": ExtResource("13_fdn8t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_yirod")
+}],
+"loop": true,
+"name": &"Fields",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 2.0,
+"texture": ExtResource("15_chdc6")
+}, {
+"duration": 2.0,
+"texture": ExtResource("16_5pxy8")
+}],
+"loop": true,
+"name": &"Fire",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 2.0,
+"texture": ExtResource("17_xsyvl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_ff042")
+}],
+"loop": true,
+"name": &"Gates",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 2.0,
+"texture": ExtResource("19_8hlnr")
+}, {
+"duration": 2.0,
+"texture": ExtResource("20_ggkyq")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 2.0,
+"texture": ExtResource("21_bf2am")
+}, {
+"duration": 2.0,
+"texture": ExtResource("22_igogu")
+}],
+"loop": true,
+"name": &"King",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 2.0,
+"texture": ExtResource("23_lqhvu")
+}, {
+"duration": 2.0,
+"texture": ExtResource("24_a5r23")
+}],
+"loop": true,
+"name": &"Money",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 2.0,
+"texture": ExtResource("25_keumx")
+}, {
+"duration": 2.0,
+"texture": ExtResource("26_5vtmu")
+}],
+"loop": true,
+"name": &"Peasants",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 2.0,
+"texture": ExtResource("27_b1q6a")
+}, {
+"duration": 2.0,
+"texture": ExtResource("28_8xvi4")
+}],
+"loop": true,
+"name": &"Queen",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 2.0,
+"texture": ExtResource("29_4nfgn")
+}, {
+"duration": 2.0,
+"texture": ExtResource("30_mx2ha")
+}],
+"loop": true,
+"name": &"Sing",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("31_5lvgn")
+}, {
+"duration": 2.0,
+"texture": ExtResource("32_udnn5")
+}],
+"loop": true,
+"name": &"Slip",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 2.0,
+"texture": ExtResource("33_qhjp4")
+}, {
+"duration": 2.0,
+"texture": ExtResource("34_spu36")
+}],
+"loop": true,
+"name": &"Theft",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 2.0,
+"texture": ExtResource("35_0omvb")
+}, {
+"duration": 2.0,
+"texture": ExtResource("36_tj1fs")
+}],
+"loop": true,
+"name": &"Treasury",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 2.0,
+"texture": ExtResource("37_xmwsc")
+}, {
+"duration": 2.0,
+"texture": ExtResource("38_xujlj")
+}],
+"loop": true,
+"name": &"Viking",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("39_8iigu")
+}, {
+"duration": 2.0,
+"texture": ExtResource("40_cjb8e")
+}],
+"loop": true,
+"name": &"Weapons",
+"speed": 5.0
+}]
 
 [node name="Jester" type="Node2D"]
 
-[node name="Shadow" type="Sprite2D" parent="."]
-position = Vector2(0, 2)
-texture = SubResource("CompressedTexture2D_oh2h4")
-
-[node name="Polygons" type="Node2D" parent="."]
-position = Vector2(0, 20)
-
-[node name="Head" type="Polygon2D" parent="Polygons"]
-position = Vector2(48, -584)
-offset = Vector2(-88, -543)
-
-[node name="Body" type="Polygon2D" parent="Polygons"]
-offset = Vector2(-409, -595)
-
-[node name="Arm" type="Polygon2D" parent="Polygons"]
-position = Vector2(-23, -532)
-offset = Vector2(-214, -296)
-skeleton = NodePath("../../Skeleton2D")
-bones = ["Hip", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0), "Hip/BodyLow", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0), "Hip/BodyLow/Chest", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0), "Hip/BodyLow/Chest/Head", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0), "Hip/BodyLow/Chest/Arm1", PackedFloat32Array(0, 1, 1, 1, 1, 1, 0, 0, 0), "Hip/BodyLow/Chest/Arm1/Arm1b", PackedFloat32Array(1, 0, 0, 0, 0, 0, 1, 1, 1), "Hip/BodyLow/Chest/Arm1/Arm1b/Hand", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0)]
-
-[node name="Arm2" type="Polygon2D" parent="Polygons"]
-position = Vector2(85, -526)
-scale = Vector2(-1, 1)
-offset = Vector2(-214, -296)
-skeleton = NodePath("../../Skeleton2D")
-bones = ["Hip", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0), "Hip/BodyLow", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0), "Hip/BodyLow/Chest", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0), "Hip/BodyLow/Chest/Head", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0), "Hip/BodyLow/Chest/Arm1", PackedFloat32Array(0, 1, 1, 1, 1, 1, 0, 0, 0), "Hip/BodyLow/Chest/Arm1/Arm1b", PackedFloat32Array(1, 0, 0, 0, 0, 0, 1, 1, 1), "Hip/BodyLow/Chest/Arm1/Arm1b/Hand", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0), "Hip/BodyLow/Chest/Arm2", PackedFloat32Array(0, 0.7, 1, 1, 1, 1, 0, 0, 0), "Hip/BodyLow/Chest/Arm2/Arm1b", PackedFloat32Array(1, 0, 0, 0, 0, 0, 1, 1, 1), "Hip/BodyLow/Chest/Arm2/Arm1b/Hand", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0)]
-
-[node name="Hat" type="Polygon2D" parent="Polygons"]
-position = Vector2(74, -773)
-offset = Vector2(-157, -142)
-
-[node name="Pompom" type="Polygon2D" parent="Polygons/Hat"]
-position = Vector2(148, -16)
-offset = Vector2(-248, -198)
-
-[node name="Foot1" type="Polygon2D" parent="Polygons"]
-position = Vector2(-86, -54)
-offset = Vector2(-270, -369)
-
-[node name="Foot2" type="Polygon2D" parent="Polygons"]
-position = Vector2(72, -44)
-offset = Vector2(-199, -448)
-
-[node name="HandOpen" type="Polygon2D" parent="Polygons"]
-position = Vector2(-229, -657)
-offset = Vector2(-241, -546)
-
-[node name="Skeleton2D" type="Skeleton2D" parent="."]
-
-[node name="Hip" type="Bone2D" parent="Skeleton2D"]
-position = Vector2(0, -266)
-rest = Transform2D(1, 0, 0, 1, 0, -266)
-
-[node name="BodyLow" type="Bone2D" parent="Skeleton2D/Hip"]
-rest = Transform2D(1, 0, 0, 1, 0, 0)
-
-[node name="Chest" type="Bone2D" parent="Skeleton2D/Hip/BodyLow"]
-position = Vector2(18, -174)
-rest = Transform2D(1, 0, 0, 1, 18, -174)
-
-[node name="Head" type="Bone2D" parent="Skeleton2D/Hip/BodyLow/Chest"]
-position = Vector2(12, -158)
-rest = Transform2D(1, 0, 0, 1, 12, -158)
-
-[node name="Arm1" type="Bone2D" parent="Skeleton2D/Hip/BodyLow/Chest"]
-position = Vector2(-58, -76)
-rest = Transform2D(1, 0, 0, 1, -58, -76)
-
-[node name="Arm1b" type="Bone2D" parent="Skeleton2D/Hip/BodyLow/Chest/Arm1"]
-position = Vector2(-109, -5)
-rest = Transform2D(1, 0, 0, 1, -109, -5)
-
-[node name="Hand" type="Bone2D" parent="Skeleton2D/Hip/BodyLow/Chest/Arm1/Arm1b"]
-position = Vector2(-77, -113)
-rest = Transform2D(1, 0, 0, 1, -77, -113)
-
-[node name="Arm2" type="Bone2D" parent="Skeleton2D/Hip/BodyLow/Chest"]
-position = Vector2(73, -68)
-rotation = -3.14159
-scale = Vector2(1, -1)
-rest = Transform2D(-1, 0, 0, 1, 73, -68)
-
-[node name="Arm1b" type="Bone2D" parent="Skeleton2D/Hip/BodyLow/Chest/Arm2"]
-position = Vector2(-119, -3)
-rotation = -0.0104881
-scale = Vector2(1, 1)
-rest = Transform2D(0.999945, -0.0104879, 0.0104879, 0.999945, -119, -3)
-
-[node name="Hand" type="Bone2D" parent="Skeleton2D/Hip/BodyLow/Chest/Arm2/Arm1b"]
-position = Vector2(-77, -113)
-rest = Transform2D(1, 0, 0, 1, -77, -113)
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -450)
+sprite_frames = SubResource("SpriteFrames_nb5su")
+animation = &"Idle"
+frame_progress = 0.623159
