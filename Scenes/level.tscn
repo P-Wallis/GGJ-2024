@@ -8,8 +8,8 @@
 [ext_resource type="PackedScene" uid="uid://cawgtx8itufjp" path="res://Scenes/UIScenes/cards_and_slots_ui.tscn" id="4_8dvat"]
 [ext_resource type="PackedScene" uid="uid://dkdbhb5k75xx2" path="res://Scenes/UIScenes/message_ui.tscn" id="5_0apc2"]
 [ext_resource type="PackedScene" uid="uid://dui72aep4hato" path="res://Scenes/UIScenes/thought_bubble_ui.tscn" id="7_wchay"]
-[ext_resource type="PackedScene" uid="uid://l7xkfq8vd3d5" path="res://Scenes/UIScenes/reaction_options_ui.tscn" id="8_lt7mv"]
-[ext_resource type="PackedScene" path="res://Scenes/king.tscn" id="9_6pw06"]
+[ext_resource type="PackedScene" uid="uid://cps5ihmajsylk" path="res://Scenes/UIScenes/reaction_options_ui.tscn" id="8_lt7mv"]
+[ext_resource type="PackedScene" uid="uid://c6k77gh1e57bu" path="res://Scenes/king.tscn" id="9_6pw06"]
 [ext_resource type="PackedScene" uid="uid://bdsqh086unyq7" path="res://Scenes/jester.tscn" id="9_e283u"]
 
 [node name="Level" type="Node2D" node_paths=PackedStringArray("levelNode")]

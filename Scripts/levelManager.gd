@@ -5,7 +5,8 @@ enum LevelPhase {
 	MESSAGE,
 	CHOOSE_CARDS,
 	DANCE,
-	KING_REACTION
+	KING_REACTION,
+	FAILED_COMMUNICATION
 }
 
 var phase:LevelPhase
@@ -18,6 +19,7 @@ var thoughtUI:ThoughtBubbleUI
 var optionsUI:ReactionOptionsUI
 var jester:Jester
 var messageCount = 0
+var retryCount = 0
 
 var cards:Array[Card]
 
@@ -85,6 +87,7 @@ func GoToPhase(newPhase:LevelPhase):
 			optionsUI.visible = true
 			
 			if(messages[messageCount].DoCardsMatchTheMessage(cards)):
+				retryCount = 0
 				# King success react
 				optionsUI.button.text = "Done"
 				if(optionsUI.button.pressed.is_connected(self.GoToPhaseChooseCards)):
@@ -92,12 +95,24 @@ func GoToPhase(newPhase:LevelPhase):
 				if(!optionsUI.button.pressed.is_connected(self.GoToNextLevel)):
 					optionsUI.button.pressed.connect(self.GoToNextLevel)
 			else:
-				# King Fail react
-				optionsUI.button.text = "Retry"
-				if(optionsUI.button.pressed.is_connected(self.GoToNextLevel)):
-					optionsUI.button.pressed.disconnect(self.GoToNextLevel)
-				if(!optionsUI.button.pressed.is_connected(self.GoToPhaseChooseCards)):
-					optionsUI.button.pressed.connect(self.GoToPhaseChooseCards)
+				if retryCount < 2:
+					# King Fail react
+					optionsUI.button.text = "Retry"
+					retryCount += 1
+					if(optionsUI.button.pressed.is_connected(self.GoToNextLevel)):
+						optionsUI.button.pressed.disconnect(self.GoToNextLevel)
+					if(!optionsUI.button.pressed.is_connected(self.GoToPhaseChooseCards)):
+						optionsUI.button.pressed.connect(self.GoToPhaseChooseCards)
+				else:
+					retryCount = 0
+					self.GoToPhase(LevelPhase.FAILED_COMMUNICATION) 
+			pass
+		LevelPhase.FAILED_COMMUNICATION:
+			# Get the message and display it
+			messageUI.visible = true
+			messageUI.messageLabel.text = "You failed to communicate the message. Moving on..."
+			if(!messageUI.button.pressed.is_connected(self.SkipCurrentLevel)):
+				messageUI.button.pressed.connect(self.SkipCurrentLevel)
 			pass
 			
 func GoToWinOrFailScreen(didWin):
@@ -110,4 +125,9 @@ func GoToWinOrFailScreen(didWin):
 		get_tree().get_root().add_child(instance)
 	else:
 		print('fail')
+		
+func SkipCurrentLevel():
+	messageUI.button.pressed.disconnect(self.SkipCurrentLevel)
+	self.GoToNextLevel()
+	
 
