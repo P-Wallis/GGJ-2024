@@ -2,7 +2,7 @@ extends AspectRatioContainer
 class_name CardUI
 
 var card_resource:Card
-@onready var panel:TextureRect = $Panel
+var panel:TextureRect
 var icon:TextureRect
 
 func _get_drag_data(_at_position):
@@ -21,6 +21,11 @@ func _get_drag_data(_at_position):
 	return drag_data
 
 func set_card_resource(value:Card):
-	card_resource = value
 	icon = $Control/Icon
+	panel = $Panel
+	card_resource = value
 	icon.texture = value.icon
+	
+	# Flip the background panel randomly
+	panel.flip_h = randf() > 0.5
+	panel.flip_v = randf() > 0.5
