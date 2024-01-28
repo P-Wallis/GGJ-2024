@@ -1,8 +1,7 @@
-[gd_scene load_steps=26 format=3 uid="uid://cawgtx8itufjp"]
+[gd_scene load_steps=25 format=3 uid="uid://cawgtx8itufjp"]
 
 [ext_resource type="Script" path="res://Scripts/actionslotservice.gd" id="1_3nsv5"]
-[ext_resource type="PackedScene" uid="uid://bsg6rybm557fg" path="res://Scenes/card.tscn" id="2_bmaim"]
-[ext_resource type="Script" path="res://Scripts/actionslot.gd" id="3_ts763"]
+[ext_resource type="PackedScene" uid="uid://ci53oog6cxy58" path="res://Scenes/actionslot.tscn" id="2_4rlrw"]
 [ext_resource type="Script" path="res://Scripts/card_grid_populater.gd" id="4_4h1py"]
 [ext_resource type="Resource" uid="uid://mp1epypx480u" path="res://CardData/Baby.tres" id="5_xuilb"]
 [ext_resource type="Resource" uid="uid://dawd57rt7p24n" path="res://CardData/Banana.tres" id="6_vttwr"]
@@ -33,21 +32,33 @@ layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_3nsv5")
 
-[node name="action_slot1" parent="action_slots" instance=ExtResource("2_bmaim")]
+[node name="action_slot1" parent="action_slots" instance=ExtResource("2_4rlrw")]
 layout_mode = 0
-offset_left = 694.0
-offset_top = 826.0
-offset_right = 794.0
-offset_bottom = 926.0
-script = ExtResource("3_ts763")
+offset_left = 693.0
+offset_top = 955.0
+offset_right = 793.0
+offset_bottom = 1055.0
 
-[node name="action_slot2" parent="action_slots" instance=ExtResource("2_bmaim")]
+[node name="action_slot2" parent="action_slots" instance=ExtResource("2_4rlrw")]
 layout_mode = 0
-offset_left = 842.0
-offset_top = 828.0
-offset_right = 942.0
-offset_bottom = 928.0
-script = ExtResource("3_ts763")
+offset_left = 848.0
+offset_top = 954.0
+offset_right = 948.0
+offset_bottom = 1054.0
+
+[node name="action_slot3" parent="action_slots" instance=ExtResource("2_4rlrw")]
+layout_mode = 0
+offset_left = 996.0
+offset_top = 954.0
+offset_right = 1096.0
+offset_bottom = 1054.0
+
+[node name="action_slot4" parent="action_slots" instance=ExtResource("2_4rlrw")]
+layout_mode = 0
+offset_left = 1144.0
+offset_top = 957.0
+offset_right = 1244.0
+offset_bottom = 1057.0
 
 [node name="GridBackground" type="TextureRect" parent="."]
 offset_left = 218.0
