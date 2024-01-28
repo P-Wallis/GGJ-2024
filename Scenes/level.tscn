@@ -1,9 +1,16 @@
-[gd_scene load_steps=5 format=3 uid="uid://bpkpph3ln7886"]
+[gd_scene load_steps=8 format=3 uid="uid://bpkpph3ln7886"]
 
 [ext_resource type="Texture2D" uid="uid://j6mtetcsh4ch" path="res://Assets/Sprites/BGbackground.png" id="1_tdkdg"]
 [ext_resource type="Texture2D" uid="uid://cwcxc727le3ra" path="res://Assets/Sprites/King_PH.png" id="2_737ks"]
 [ext_resource type="PackedScene" uid="uid://5v7wo4v4rb7y" path="res://Scenes/cards_and_slots_ui.tscn" id="4_8dvat"]
 [ext_resource type="PackedScene" uid="uid://dacmw7hurlboe" path="res://Scenes/UIScenes/speech_bubble.tscn" id="4_cfqqb"]
+[ext_resource type="Texture2D" uid="uid://lkg3bdsahs4n" path="res://Assets/Sprites/Cards UI/Hue_Saturation 2.png" id="5_jvofl"]
+[ext_resource type="FontFile" uid="uid://dd7gumdjab30j" path="res://Assets/Fonts/GRILLEDCHEESE_BTN.TTF" id="6_mcfwn"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_fpd4x"]
+font = ExtResource("6_mcfwn")
+font_size = 40
+font_color = Color(0.4, 0.12549, 0.101961, 1)
 
 [node name="Level" type="Node2D"]
 
@@ -25,3 +32,36 @@ offset = Vector2(482.15, 46.94)
 transform = Transform2D(1, 0, 0, 1, 482.15, 46.94)
 
 [node name="SpeechBubble" parent="." instance=ExtResource("4_cfqqb")]
+visible = false
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureRect" type="TextureRect" parent="Control"]
+layout_mode = 0
+offset_left = 272.0
+offset_top = 37.0
+offset_right = 1695.0
+offset_bottom = 898.0
+texture = ExtResource("5_jvofl")
+
+[node name="Speech" type="Label" parent="Control/TextureRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -377.5
+offset_top = -218.5
+offset_right = 393.5
+offset_bottom = 218.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Today is your first day as the jester to the court of a particularly grumpy king. Your king lives a life of happy middledom. Neither too serious nor too happy. Given your talents in the art of laughter, you are called upon by invisible hands to deliver difficult new to him with wit and brevity."
+label_settings = SubResource("LabelSettings_fpd4x")
+vertical_alignment = 1
+autowrap_mode = 3
