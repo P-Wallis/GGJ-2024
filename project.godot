@@ -11,9 +11,10 @@ config_version=5
 [application]
 
 config/name="TheFool"
+config/description="Created for the Global Game Jam 2024"
 run/main_scene="res://Scenes/main.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
-config/icon="res://icon.svg"
+config/icon="res://Assets/Sprites/King/King_PH.png"
 
 [display]
 
