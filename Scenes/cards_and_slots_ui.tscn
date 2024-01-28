@@ -35,7 +35,7 @@ offset_top = 314.0
 offset_right = 618.0
 offset_bottom = 414.0
 texture = ExtResource("4_x533p")
-Card = ExtResource("5_xuilb")
+card = ExtResource("5_xuilb")
 metadata/Name = "Baby"
 
 [node name="banana_card" parent="action_cards" instance=ExtResource("2_r0bt4")]
@@ -44,7 +44,7 @@ offset_top = 308.0
 offset_right = 788.0
 offset_bottom = 408.0
 texture = ExtResource("4_x533p")
-Card = ExtResource("6_vttwr")
+card = ExtResource("6_vttwr")
 metadata/Name = "Banana"
 
 [node name="baron_card" parent="action_cards" instance=ExtResource("2_r0bt4")]
@@ -53,5 +53,5 @@ offset_top = 309.0
 offset_right = 953.0
 offset_bottom = 409.0
 texture = ExtResource("4_x533p")
-Card = ExtResource("7_evwkx")
+card = ExtResource("7_evwkx")
 metadata/Name = "Baron"
