@@ -1,16 +1,47 @@
-[gd_scene load_steps=6 format=3 uid="uid://3x2hkle7jowh"]
+[gd_scene load_steps=12 format=3 uid="uid://3x2hkle7jowh"]
 
 [ext_resource type="FontFile" uid="uid://dd7gumdjab30j" path="res://Assets/Fonts/GRILLEDCHEESE_BTN.TTF" id="1_h21gv"]
 [ext_resource type="Script" path="res://Scenes/win_or_fail_screen.gd" id="1_y23od"]
+[ext_resource type="Texture2D" uid="uid://j6mtetcsh4ch" path="res://Assets/Sprites/BGbackground.png" id="2_fs3k4"]
 [ext_resource type="Script" path="res://Scenes/restart_button.gd" id="2_ktek4"]
+[ext_resource type="Texture2D" uid="uid://bxqjuu0odun4t" path="res://Assets/Sprites/Win1.png" id="3_ufpwr"]
+[ext_resource type="Texture2D" uid="uid://lkg3bdsahs4n" path="res://Assets/Sprites/Cards UI/Hue_Saturation 2.png" id="3_xjn3y"]
 
 [sub_resource type="Theme" id="Theme_x88vu"]
 
-[sub_resource type="Theme" id="Theme_nhxkj"]
+[sub_resource type="LabelSettings" id="LabelSettings_xipty"]
+font = ExtResource("1_h21gv")
+font_size = 70
 
-[node name="WinOrFailScreen" type="Node2D" node_paths=PackedStringArray("message")]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tvo5a"]
+bg_color = Color(0.399431, 0.124447, 0.100438, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_size = 3
+shadow_offset = Vector2(0, 3)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_am5ef"]
+bg_color = Color(0.278431, 0.0784314, 0.0588235, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_size = 3
+shadow_offset = Vector2(0, 3)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7rsaw"]
+bg_color = Color(0.2, 0.0470588, 0.0313726, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_size = 3
+shadow_offset = Vector2(0, 3)
+
+[node name="WinOrFailScreen" type="Node2D"]
 script = ExtResource("1_y23od")
-message = NodePath("CanvasLayer/Control/RichTextLabel")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -22,46 +53,68 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/Control"]
-clip_contents = false
-custom_minimum_size = Vector2(1200, 200)
+[node name="BG" type="TextureRect" parent="CanvasLayer/Control"]
+layout_mode = 0
+offset_right = 2000.0
+offset_bottom = 1200.0
+texture = ExtResource("2_fs3k4")
+
+[node name="BG2" type="TextureRect" parent="CanvasLayer/Control"]
+layout_mode = 0
+offset_left = 48.0
+offset_top = 246.0
+offset_right = 1471.0
+offset_bottom = 1107.0
+scale = Vector2(0.875776, 0.875776)
+texture = ExtResource("3_xjn3y")
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control"]
+layout_mode = 0
+offset_left = 324.0
+offset_top = 419.0
+offset_right = 1557.0
+offset_bottom = 1225.0
+scale = Vector2(0.598574, 0.598574)
+texture = ExtResource("3_ufpwr")
+
+[node name="RichTextLabel" type="Label" parent="CanvasLayer/Control"]
+custom_minimum_size = Vector2(500, 200)
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -600.0
-offset_top = -194.0
-offset_right = 600.0
-offset_bottom = 6.0
+offset_left = -707.0
+offset_top = -526.0
+offset_right = 640.0
+offset_bottom = -261.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = SubResource("Theme_x88vu")
-theme_override_fonts/normal_font = ExtResource("1_h21gv")
-theme_override_font_sizes/normal_font_size = 64
 text = "Message
 "
-fit_content = true
+label_settings = SubResource("LabelSettings_xipty")
+vertical_alignment = 1
 
 [node name="Button" type="Button" parent="CanvasLayer/Control" node_paths=PackedStringArray("winOrFailScreen")]
-custom_minimum_size = Vector2(500, 150)
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -4.0
-offset_top = 192.0
-offset_right = 4.0
-offset_bottom = 200.0
-grow_horizontal = 2
-grow_vertical = 2
-theme = SubResource("Theme_nhxkj")
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -580.0
+offset_top = -326.0
+offset_right = -71.0
+offset_bottom = -155.0
+grow_horizontal = 0
+grow_vertical = 0
 theme_override_fonts/font = ExtResource("1_h21gv")
-theme_override_font_sizes/font_size = 48
-text = "Play again
-"
+theme_override_font_sizes/font_size = 90
+theme_override_styles/normal = SubResource("StyleBoxFlat_tvo5a")
+theme_override_styles/hover = SubResource("StyleBoxFlat_am5ef")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_7rsaw")
+text = "Play Again"
 script = ExtResource("2_ktek4")
 winOrFailScreen = NodePath("../../..")
