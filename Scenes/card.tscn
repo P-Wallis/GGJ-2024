@@ -21,7 +21,7 @@ mouse_filter = 2
 texture = ExtResource("2_6xn3k")
 stretch_mode = 5
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="Icon" type="TextureRect" parent="."]
 layout_mode = 0
 offset_left = 136.0
 offset_top = 131.0
