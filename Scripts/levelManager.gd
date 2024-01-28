@@ -10,12 +10,13 @@ enum LevelPhase {
 
 var phase:LevelPhase
 @export var cardPairs:CardPairs
-@export var message:MessageResource
+@export var messages:Array[MessageResource]
 var messageUI:MessageUI
 var chooseUI:CardsAndSlotsUI
 var thoughtUI:CanvasLayer
 var optionsUI:ReactionOptionsUI
 var jester:Jester
+var messageCount = 0
 
 var cards:Array[Card]
 
@@ -39,6 +40,11 @@ func GoToPhaseChooseCards():
 	GoToPhase(LevelPhase.CHOOSE_CARDS)
 	
 func GoToNextLevel():
+	messageCount += 1
+	if messageCount < messages.size():
+		GoToPhase(LevelPhase.MESSAGE)
+	else:
+		GoToWinOrFailScreen(true)
 	pass
 
 func GoToPhase(newPhase:LevelPhase):
@@ -55,7 +61,7 @@ func GoToPhase(newPhase:LevelPhase):
 		LevelPhase.MESSAGE:
 			# Get the message and display it
 			messageUI.visible = true
-			messageUI.messageLabel.text = message.message
+			messageUI.messageLabel.text = messages[messageCount].message
 			if(!messageUI.button.pressed.is_connected(self.GoToPhaseChooseCards)):
 				messageUI.button.pressed.connect(self.GoToPhaseChooseCards)
 			pass
@@ -76,7 +82,7 @@ func GoToPhase(newPhase:LevelPhase):
 			thoughtUI.visible = true
 			optionsUI.visible = true
 			
-			if(message.DoCardsMatchTheMessage(cards)):
+			if(messages[messageCount].DoCardsMatchTheMessage(cards)):
 				# King success react
 				optionsUI.button.text = "Done"
 				if(optionsUI.button.pressed.is_connected(self.GoToPhaseChooseCards)):
@@ -91,4 +97,14 @@ func GoToPhase(newPhase:LevelPhase):
 				if(!optionsUI.button.pressed.is_connected(self.GoToPhaseChooseCards)):
 					optionsUI.button.pressed.connect(self.GoToPhaseChooseCards)
 			pass
+			
+func GoToWinOrFailScreen(didWin):
+	if didWin:
+		print('win')
+		get_tree().get_root().queue_free()
+		var scene_to_instance = load("res://Scenes/win_or_fail_screen.tscn")
+		var instance = scene_to_instance.instantiate()
+		get_tree().get_root().add_child(instance)
+	else:
+		print('fail')
 
