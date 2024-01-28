@@ -5,3 +5,4 @@
 [resource]
 script = ExtResource("1_fyb8k")
 word = "Peasants"
+type = 0
