@@ -1,3 +1,7 @@
-[gd_scene format=3 uid="uid://dui72aep4hato"]
+[gd_scene load_steps=2 format=3 uid="uid://dui72aep4hato"]
+
+[ext_resource type="PackedScene" path="res://Scenes/UIScenes/speech_bubble.tscn" id="1_0hekv"]
 
 [node name="thought_bubble_ui" type="CanvasLayer"]
+
+[node name="SpeechBubble" parent="." instance=ExtResource("1_0hekv")]
