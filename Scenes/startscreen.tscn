@@ -1,9 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://d1asvb31lnw55"]
+[gd_scene load_steps=5 format=3 uid="uid://d1asvb31lnw55"]
 
 [ext_resource type="FontFile" uid="uid://dd7gumdjab30j" path="res://Assets/Fonts/GRILLEDCHEESE_BTN.TTF" id="1_gmex8"]
 [ext_resource type="Script" path="res://Scenes/StartButton.gd" id="2_8f7rs"]
 
 [sub_resource type="Theme" id="Theme_kubys"]
+
+[sub_resource type="Theme" id="Theme_kwp86"]
 
 [node name="Main" type="Node2D"]
 
@@ -38,5 +40,27 @@ theme_override_font_sizes/font_size = 64
 text = "Start"
 script = ExtResource("2_8f7rs")
 levelParent = NodePath("../../../Level")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/Control"]
+clip_contents = false
+custom_minimum_size = Vector2(500, 200)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -242.0
+offset_right = 20.0
+offset_bottom = -202.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_kwp86")
+theme_override_colors/default_color = Color(0.956863, 0.203922, 0, 1)
+theme_override_fonts/normal_font = ExtResource("1_gmex8")
+theme_override_font_sizes/normal_font_size = 128
+bbcode_enabled = true
+text = "[center]The Fool[/center]"
 
 [node name="Level" type="Node" parent="."]
