@@ -1,6 +1,6 @@
 extends Node2D
 
-@export var message:RichTextLabel
+@export var message:Label
 
 
 func Win():
