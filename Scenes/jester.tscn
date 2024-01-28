@@ -1,6 +1,7 @@
-[gd_scene load_steps=42 format=3 uid="uid://bdsqh086unyq7"]
+[gd_scene load_steps=43 format=3 uid="uid://bdsqh086unyq7"]
 
 [ext_resource type="Texture2D" uid="uid://djohehxrx75do" path="res://Assets/Sprites/Jester/PNGs/Jester-Baby_0.png" id="1_kvcdm"]
+[ext_resource type="Script" path="res://Scripts/jester.gd" id="1_sa8j2"]
 [ext_resource type="Texture2D" uid="uid://con0ob5syl5ej" path="res://Assets/Sprites/Jester/PNGs/Jester-Baby_1.png" id="2_3crke"]
 [ext_resource type="Texture2D" uid="uid://t7mrdgg40wuf" path="res://Assets/Sprites/Jester/PNGs/Jester-Banana_0.png" id="3_qnogh"]
 [ext_resource type="Texture2D" uid="uid://bxjjwk4sh8wre" path="res://Assets/Sprites/Jester/PNGs/Jester-Banana_1.png" id="4_d17de"]
@@ -265,6 +266,7 @@ animations = [{
 }]
 
 [node name="Jester" type="Node2D"]
+script = ExtResource("1_sa8j2")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -450)

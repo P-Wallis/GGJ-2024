@@ -15,6 +15,7 @@ var messageUI:MessageUI
 var chooseUI:CardsAndSlotsUI
 var thoughtUI:CanvasLayer
 var optionsUI:ReactionOptionsUI
+var jester:Jester
 
 var cards:Array[Card]
 
@@ -23,6 +24,7 @@ func _ready():
 	chooseUI = $cards_and_slots_ui
 	thoughtUI = $thought_bubble_ui
 	optionsUI = $reaction_options_ui
+	jester = $Jester
 	
 	chooseUI.init(self)
 	
@@ -65,8 +67,7 @@ func GoToPhase(newPhase:LevelPhase):
 		LevelPhase.DANCE:
 			# show the dannce
 			# show the king's thoughts
-			thoughtUI.visible = true
-			GoToPhase(LevelPhase.KING_REACTION)
+			jester.playAnimationForCards(cards, func():GoToPhase(LevelPhase.KING_REACTION))
 			pass
 		LevelPhase.KING_REACTION:
 			# Evaluate the player's choices
