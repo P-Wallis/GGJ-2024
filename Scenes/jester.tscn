@@ -1,6 +1,7 @@
-[gd_scene load_steps=44 format=3 uid="uid://bdsqh086unyq7"]
+[gd_scene load_steps=45 format=3 uid="uid://bdsqh086unyq7"]
 
 [ext_resource type="Texture2D" uid="uid://djohehxrx75do" path="res://Assets/Sprites/Jester/PNGs/Jester-Baby_0.png" id="1_kvcdm"]
+[ext_resource type="Script" path="res://Scripts/jester.gd" id="1_sa8j2"]
 [ext_resource type="Texture2D" uid="uid://con0ob5syl5ej" path="res://Assets/Sprites/Jester/PNGs/Jester-Baby_1.png" id="2_3crke"]
 [ext_resource type="Texture2D" uid="uid://t7mrdgg40wuf" path="res://Assets/Sprites/Jester/PNGs/Jester-Banana_0.png" id="3_qnogh"]
 [ext_resource type="Texture2D" uid="uid://bxjjwk4sh8wre" path="res://Assets/Sprites/Jester/PNGs/Jester-Banana_1.png" id="4_d17de"]
@@ -222,17 +223,6 @@ animations = [{
 "speed": 5.0
 }, {
 "frames": [{
-"duration": 1.0,
-"texture": ExtResource("31_5lvgn")
-}, {
-"duration": 2.0,
-"texture": ExtResource("32_udnn5")
-}],
-"loop": true,
-"name": &"Slip",
-"speed": 5.0
-}, {
-"frames": [{
 "duration": 2.0,
 "texture": ExtResource("33_qhjp4")
 }, {
@@ -255,6 +245,17 @@ animations = [{
 "speed": 5.0
 }, {
 "frames": [{
+"duration": 1.0,
+"texture": ExtResource("31_5lvgn")
+}, {
+"duration": 2.0,
+"texture": ExtResource("32_udnn5")
+}],
+"loop": true,
+"name": &"Trip",
+"speed": 5.0
+}, {
+"frames": [{
 "duration": 2.0,
 "texture": ExtResource("37_xmwsc")
 }, {
@@ -262,7 +263,7 @@ animations = [{
 "texture": ExtResource("38_xujlj")
 }],
 "loop": true,
-"name": &"Viking",
+"name": &"Vikings",
 "speed": 5.0
 }, {
 "frames": [{
@@ -278,9 +279,9 @@ animations = [{
 }]
 
 [node name="Jester" type="Node2D"]
+script = ExtResource("1_sa8j2")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -450)
 sprite_frames = SubResource("SpriteFrames_nb5su")
-animation = &"Kitchen"
-frame_progress = 0.181475
+animation = &"Idle"
