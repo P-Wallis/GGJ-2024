@@ -142,7 +142,7 @@ animations = [{
 "texture": ExtResource("18_ff042")
 }],
 "loop": true,
-"name": &"Gates",
+"name": &"Gate",
 "speed": 5.0
 }, {
 "frames": [{
@@ -284,4 +284,4 @@ script = ExtResource("1_sa8j2")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -450)
 sprite_frames = SubResource("SpriteFrames_nb5su")
-animation = &"Idle"
+animation = &"Gate"
