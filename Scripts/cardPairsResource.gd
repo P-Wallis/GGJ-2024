@@ -8,101 +8,121 @@ var pairs : Array[Dictionary] = [
 	{
 	"cards": [0, 1],
 	"name": "Baby + Banana",
+	"idea": "little bannana baby",
 	"emotion": Emotion.AMUSED
 	},
 	{
 	"cards": [0, 2],
 	"name": "Baby + Baron",
+	"idea": "the Baron had a baby",
 	"emotion": Emotion.CONFUSED
 	},
 	{
 	"cards": [0, 3],
 	"name": "Baby + Bathroom",
+	"idea": "baby poop",
 	"emotion": Emotion.AMUSED
 	},
 	{
 	"cards": [0, 4],
 	"name": "Baby + Death",
+	"idea": "dead baby",
 	"emotion": Emotion.OFFENDED
 	},
 	{
 	"cards": [0, 5],
 	"name": "Baby + Eat",
+	"idea": "a baby eating",
 	"emotion": Emotion.AMUSED
 	},
 	{
 	"cards": [0, 6],
 	"name": "Baby + Fields",
+	"idea": "a baby in the fields",
 	"emotion": Emotion.CONFUSED
 	},
 	{
 	"cards": [0, 7],
 	"name": "Baby + Fire",
+	"idea": "burn the baby",
 	"emotion": Emotion.OFFENDED
 	},
 	{
 	"cards": [0, 8],
 	"name": "Baby + Gates",
+	"idea": "a baby at the gate",
 	"emotion": Emotion.CONFUSED
 	},
 	{
 	"cards": [0, 9],
 	"name": "Baby + King",
+	"idea": "the royal baby",
 	"emotion": Emotion.AMUSED
 	},
 	{
 	"cards": [0, 10],
 	"name": "Baby + Kitchen",
+	"idea": "a baby in the kitchen",
 	"emotion": Emotion.AMUSED
 	},
 	{
 	"cards": [0, 11],
 	"name": "Baby + Money",
+	"idea": "a baby spending money",
 	"emotion": Emotion.CONFUSED
 	},
 	{
 	"cards": [0, 12],
 	"name": "Baby + Peasants",
+	"idea": "the peasants are having babies",
 	"emotion": Emotion.CONFUSED
 	},
 	{
 	"cards": [0, 13],
 	"name": "Baby + Queen",
+	"idea": "the Queen is pregnant",
 	"emotion": Emotion.AMUSED
 	},
 	{
 	"cards": [0, 14],
 	"name": "Baby + Sing",
+	"idea": "babies singing",
 	"emotion": Emotion.AMUSED
 	},
 	{
 	"cards": [0, 15],
 	"name": "Baby + Theft",
+	"idea": "someone stealing our babies",
 	"emotion": Emotion.OFFENDED
 	},
 	{
 	"cards": [0, 16],
 	"name": "Baby + Treasury",
+	"idea": "a baby in the treasury",
 	"emotion": Emotion.CONFUSED
 	},
 	{
 	"cards": [0, 17],
 	"name": "Baby + Trip",
+	"idea": "a baby falling over",
 	"emotion": Emotion.AMUSED
 	},
 	{
 	"cards": [0, 18],
 	"name": "Baby + Vikings",
+	"idea": "the Vikings' population is increasing",
 	"emotion": Emotion.OFFENDED
 	},
 	{
 	"cards": [0, 19],
 	"name": "Baby + Weapons",
+	"idea": "murdering babies",
 	"emotion": Emotion.OFFENDED
 	},
 	{
 	"cards": [1, 2],
 	"name": "Banana + Baron",
+	"idea": "the Baron sitting on a bananna",
 	"emotion": Emotion.AMUSED
 	},
 	{
@@ -967,21 +987,40 @@ func GetPairEmotion(xCard:Card, yCard:Card):
 	return GetPairEmotionByIndex(GetCardIndex(xCard), GetCardIndex(yCard))
 
 func GetPairEmotionByIndex(x:int, y:int):
+	return GetPairInfoByIndex(x, y, "emotion");
+
+func GetPairIdeaByIndex(x:int, y:int):
+	return GetPairInfoByIndex(x, y, "idea");
+	
+func GetPairInfoByIndex(x:int, y:int, value:String):
 	for pair in pairs:
 		var pairCards = pair["cards"]
 		if(pairCards[0] != x && pairCards[1] != x):
 			continue
 		if(pairCards[0] != y && pairCards[1] != y):
 			continue
-		return pair["emotion"]
+		return pair[value]
 	return null
 
-func GetCombinedEmotion(cardInput:Array[Card]):
+func GetEmotionInfo(cardInput:Array[Card]):
 	# Get the card indicies (to make searching a little more efficient)
 	var indexArray:Array[int] = [];
 	for card in cardInput:
 		indexArray.append(GetCardIndex(card))
 		
+	
+	var cardPairsByEmotion = {
+		Emotion.CONFUSED: [],
+		Emotion.OFFENDED: [],
+		Emotion.AMUSED: [],
+	}
+	
+	var ideasByEmotion = {
+		Emotion.CONFUSED: [],
+		Emotion.OFFENDED: [],
+		Emotion.AMUSED: [],
+	}
+	
 	# Count the emotions for each pair of cards
 	var countsDict = {
 		Emotion.CONFUSED: 0,
@@ -991,7 +1030,15 @@ func GetCombinedEmotion(cardInput:Array[Card]):
 	for x in indexArray.size():
 		var y = x+1
 		while(y < indexArray.size()):
-			countsDict[GetPairEmotionByIndex(indexArray[x], indexArray[y])] += 1
+			var pairEmotion = GetPairEmotionByIndex(indexArray[x], indexArray[y])
+			if(pairEmotion == null):
+				printerr("Got null for pair: " + cardInput[x].word + " + " + cardInput[y].word)
+				y+=1
+				continue
+			countsDict[pairEmotion] += 1
+			var cardPair: Array[Card] = [cardInput[x], cardInput[y]]
+			cardPairsByEmotion[pairEmotion].append(cardPair)
+			ideasByEmotion[pairEmotion].append(GetPairIdeaByIndex(indexArray[x], indexArray[y]))
 			y+=1
 	
 	# Decide which emotion we should have, based on counts
@@ -999,6 +1046,11 @@ func GetCombinedEmotion(cardInput:Array[Card]):
 	if(countsDict[Emotion.AMUSED] > countsDict[Emotion.OFFENDED] && countsDict[Emotion.AMUSED] > countsDict[Emotion.CONFUSED]):
 		combinedMood = Emotion.AMUSED
 	if(countsDict[Emotion.OFFENDED] >= countsDict[Emotion.AMUSED] && countsDict[Emotion.OFFENDED] >= countsDict[Emotion.CONFUSED]):
-		combinedMood = Emotion.CONFUSED
+		combinedMood = Emotion.OFFENDED
 	
-	return combinedMood;
+	return {
+		"mood":combinedMood,
+		"counts":countsDict,
+		"cardPairs":cardPairsByEmotion,
+		"ideas":ideasByEmotion
+	};

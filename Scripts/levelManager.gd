@@ -13,7 +13,7 @@ var phase:LevelPhase
 @export var message:MessageResource
 var messageUI:MessageUI
 var chooseUI:CardsAndSlotsUI
-var thoughtUI:CanvasLayer
+var thoughtUI:ThoughtBubbleUI
 var optionsUI:ReactionOptionsUI
 var jester:Jester
 
@@ -74,6 +74,7 @@ func GoToPhase(newPhase:LevelPhase):
 			# show the king's reaction
 			# Show "Done" or "Retry" buttons
 			thoughtUI.visible = true
+			thoughtUI.ShowKingThought(cards, message)
 			optionsUI.visible = true
 			
 			if(message.DoCardsMatchTheMessage(cards)):

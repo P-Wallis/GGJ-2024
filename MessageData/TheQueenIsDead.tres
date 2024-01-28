@@ -10,7 +10,8 @@
 
 [resource]
 script = ExtResource("10_lkalo")
-message = "The Baron has embezzled this year's taxes."
+message = "The Queen has died."
+successMessage = "My beloved is dead!? How awful! ... Do you know any hot babes around the court?"
 difficulty = 2
 requiredCards = Array[Resource("res://Scripts/cardResource.gd")]([ExtResource("5_wl088"), ExtResource("2_ybsp2"), ExtResource("6_nfrf6")])
 optionalCards = Array[Resource("res://Scripts/cardResource.gd")]([ExtResource("7_6mgpi"), ExtResource("3_v3j14"), ExtResource("5_oaaw0")])

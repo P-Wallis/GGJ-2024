@@ -10,7 +10,8 @@
 
 [resource]
 script = ExtResource("7_hkbac")
-message = "The Queen has died."
+message = "The Baron has embezzled this year's taxes."
+successMessage = "That dirty rat! I knew he wasn't worht entrusting with the treasury!"
 difficulty = 1
 requiredCards = Array[Resource("res://Scripts/cardResource.gd")]([ExtResource("5_ivl2y"), ExtResource("6_1y64t")])
 optionalCards = Array[Resource("res://Scripts/cardResource.gd")]([ExtResource("1_c3gca"), ExtResource("2_n1o2e"), ExtResource("3_yfe43"), ExtResource("4_6rpuw")])
