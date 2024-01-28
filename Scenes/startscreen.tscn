@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://d1asvb31lnw55"]
 
 [ext_resource type="FontFile" uid="uid://dd7gumdjab30j" path="res://Assets/Fonts/GRILLEDCHEESE_BTN.TTF" id="1_gmex8"]
-[ext_resource type="Script" path="res://Scenes/StartButton.gd" id="2_8f7rs"]
+[ext_resource type="Script" path="res://Scripts/UI/startbutton.gd" id="2_8f7rs"]
 
 [sub_resource type="Theme" id="Theme_kubys"]
 

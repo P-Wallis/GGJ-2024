@@ -13,7 +13,7 @@ func _process(delta):
 	
 func _pressed():
 	print("pressed")
-	var scene_to_instance = load("res://Scenes/level.tscn")
+	var scene_to_instance = load("res://Scenes/intro.tscn")
 	var instance = scene_to_instance.instantiate()
 	levelParent.add_child(instance)
 	
