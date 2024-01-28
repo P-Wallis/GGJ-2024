@@ -48,8 +48,8 @@ offset_right = 942.0
 offset_bottom = 928.0
 script = ExtResource("3_ts763")
 
-[node name="action_cards" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 0
+[node name="action_cards" type="GridContainer" parent="." node_paths=PackedStringArray("grid")]
+columns = 5
 script = ExtResource("4_4h1py")
 cards = Array[Resource("res://Scripts/cardResource.gd")]([ExtResource("5_xuilb"), ExtResource("6_vttwr"), ExtResource("7_evwkx"), ExtResource("8_dgfbw"), ExtResource("9_cs8gx"), ExtResource("10_vgjg1"), ExtResource("11_xmsys"), ExtResource("12_vg5fl"), ExtResource("13_kvxi4"), ExtResource("14_ps0lg"), ExtResource("15_7gile"), ExtResource("16_th63u"), ExtResource("17_hryth"), ExtResource("18_efinj"), ExtResource("19_5w14o"), ExtResource("20_6hvob"), ExtResource("21_ol652"), ExtResource("22_5enmu"), ExtResource("23_o0pr8"), ExtResource("24_br6le")])
+grid = NodePath(".")

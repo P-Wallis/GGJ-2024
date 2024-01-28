@@ -1,6 +1,7 @@
 extends Node
 
 @export var cards:Array[Card] = []
+@export var grid:GridContainer
 
 func _ready():
 	for card in cards:
@@ -14,5 +15,4 @@ func instance_game_object(icon):
 	var scene_to_instance = load("res://Scenes/card.tscn")
 	var instance = scene_to_instance.instantiate()
 	instance.texture = icon
-	add_child(instance)
-
+	grid.add_child(instance)
