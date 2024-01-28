@@ -23,7 +23,9 @@ stretch_mode = 5
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 0
-offset_right = 400.0
-offset_bottom = 413.0
+offset_left = 136.0
+offset_top = 131.0
+offset_right = 389.0
+offset_bottom = 392.0
 expand_mode = 5
 stretch_mode = 2
