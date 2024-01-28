@@ -26,11 +26,11 @@
 [ext_resource type="Texture2D" uid="uid://lkg3bdsahs4n" path="res://Assets/Sprites/Cards UI/Hue_Saturation 2.png" id="25_1icyu"]
 
 [node name="UI" type="CanvasLayer"]
+script = ExtResource("1_3nsv5")
 
 [node name="action_slots" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
-script = ExtResource("1_3nsv5")
 
 [node name="action_slot1" parent="action_slots" instance=ExtResource("2_4rlrw")]
 layout_mode = 0

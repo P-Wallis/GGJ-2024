@@ -45,6 +45,7 @@ vertical_alignment = 1
 autowrap_mode = 3
 
 [node name="Button" type="Button" parent="Control/TextureRect"]
+layout_mode = 0
 offset_left = 729.0
 offset_top = 726.0
 offset_right = 808.0
