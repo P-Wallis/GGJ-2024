@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://bpkpph3ln7886"]
+[gd_scene load_steps=8 format=3 uid="uid://bpkpph3ln7886"]
 
 [ext_resource type="Texture2D" uid="uid://j6mtetcsh4ch" path="res://Assets/Sprites/BGbackground.png" id="1_tdkdg"]
 [ext_resource type="Texture2D" uid="uid://cwcxc727le3ra" path="res://Assets/Sprites/King_PH.png" id="2_737ks"]
 [ext_resource type="PackedScene" uid="uid://bdsqh086unyq7" path="res://Scenes/jester.tscn" id="3_gj51t"]
+[ext_resource type="Script" path="res://Scripts/actionslotservice.gd" id="4_h2gva"]
 [ext_resource type="PackedScene" uid="uid://bsg6rybm557fg" path="res://Scenes/card.tscn" id="4_ryywa"]
 [ext_resource type="Texture2D" uid="uid://co2dn7r1j8v03" path="res://icon.svg" id="5_khg00"]
 [ext_resource type="Script" path="res://Scripts/actionslot.gd" id="6_bd423"]
@@ -26,21 +27,30 @@ position = Vector2(1510, 953)
 
 [node name="UI" type="Node" parent="."]
 
-[node name="ActionSlots" type="Node" parent="UI"]
+[node name="action_slots" type="Node" parent="UI"]
+script = ExtResource("4_h2gva")
 
-[node name="ActionSlot1" parent="UI/ActionSlots" instance=ExtResource("4_ryywa")]
+[node name="action_slot1" parent="UI/action_slots" instance=ExtResource("4_ryywa")]
 offset_left = 694.0
 offset_top = 826.0
 offset_right = 794.0
 offset_bottom = 926.0
 script = ExtResource("6_bd423")
 
-[node name="ActionCards" type="Node" parent="UI"]
+[node name="action_cards" type="Node" parent="UI"]
 
-[node name="ActionCard1" parent="UI/ActionCards" instance=ExtResource("4_ryywa")]
+[node name="baby_card" parent="UI/action_cards" instance=ExtResource("4_ryywa")]
 offset_left = 518.0
 offset_top = 314.0
 offset_right = 618.0
 offset_bottom = 414.0
 texture = ExtResource("5_khg00")
 metadata/Name = "Baby"
+
+[node name="banana_card" parent="UI/action_cards" instance=ExtResource("4_ryywa")]
+offset_left = 688.0
+offset_top = 308.0
+offset_right = 788.0
+offset_bottom = 408.0
+texture = ExtResource("5_khg00")
+metadata/Name = "Banana"
