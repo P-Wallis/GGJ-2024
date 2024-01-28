@@ -956,3 +956,49 @@ var pairs : Array[Dictionary] = [
 	"emotion": Emotion.OFFENDED
 	},
 ]
+
+func GetCardIndex(card:Card):
+	for i in cards.size():
+		if(cards[i] == card):
+			return i
+	return -1
+
+func GetPairEmotion(xCard:Card, yCard:Card):
+	return GetPairEmotionByIndex(GetCardIndex(xCard), GetCardIndex(yCard))
+
+func GetPairEmotionByIndex(x:int, y:int):
+	for pair in pairs:
+		var pairCards = pair["cards"]
+		if(pairCards[0] != x && pairCards[1] != x):
+			continue
+		if(pairCards[0] != y && pairCards[1] != y):
+			continue
+		return pair["emotion"]
+	return null
+
+func GetCombinedEmotion(cardInput:Array[Card]):
+	# Get the card indicies (to make searching a little more efficient)
+	var indexArray:Array[int] = [];
+	for card in cardInput:
+		indexArray.append(GetCardIndex(card))
+		
+	# Count the emotions for each pair of cards
+	var countsDict = {
+		Emotion.CONFUSED: 0,
+		Emotion.OFFENDED: 0,
+		Emotion.AMUSED: 0,
+	}
+	for x in indexArray.size():
+		var y = x+1
+		while(y < indexArray.size()):
+			countsDict[GetPairEmotionByIndex(indexArray[x], indexArray[y])] += 1
+			y+=1
+	
+	# Decide which emotion we should have, based on counts
+	var combinedMood = Emotion.CONFUSED;
+	if(countsDict[Emotion.AMUSED] > countsDict[Emotion.OFFENDED] && countsDict[Emotion.AMUSED] > countsDict[Emotion.CONFUSED]):
+		combinedMood = Emotion.AMUSED
+	if(countsDict[Emotion.OFFENDED] >= countsDict[Emotion.AMUSED] && countsDict[Emotion.OFFENDED] >= countsDict[Emotion.CONFUSED]):
+		combinedMood = Emotion.CONFUSED
+	
+	return combinedMood;
