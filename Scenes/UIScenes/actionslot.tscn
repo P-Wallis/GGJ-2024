@@ -1,6 +1,13 @@
-[gd_scene load_steps=2 format=3 uid="uid://ci53oog6cxy58"]
+[gd_scene load_steps=5 format=3 uid="uid://ci53oog6cxy58"]
 
 [ext_resource type="Script" path="res://Scripts/actionslot.gd" id="1_5tkrm"]
+[ext_resource type="Texture2D" uid="uid://csmljhndufnig" path="res://Assets/Sprites/Cards UI/Card_placement.png" id="2_4r4gn"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_i6q1a"]
+blend_mode = 1
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_df0m0"]
+texture = ExtResource("2_4r4gn")
 
 [node name="TextureRect" type="TextureRect"]
 custom_minimum_size = Vector2(100, 100)
@@ -12,7 +19,9 @@ metadata/Name = ""
 
 [node name="Panel" type="Panel" parent="."]
 show_behind_parent = true
+material = SubResource("CanvasItemMaterial_i6q1a")
 layout_mode = 0
 offset_right = 100.0
 offset_bottom = 100.0
 mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_df0m0")

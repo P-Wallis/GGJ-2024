@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=3 uid="uid://bdsqh086unyq7"]
+[gd_scene load_steps=45 format=3 uid="uid://bdsqh086unyq7"]
 
 [ext_resource type="Texture2D" uid="uid://djohehxrx75do" path="res://Assets/Sprites/Jester/PNGs/Jester-Baby_0.png" id="1_kvcdm"]
 [ext_resource type="Script" path="res://Scripts/jester.gd" id="1_sa8j2"]
@@ -24,7 +24,9 @@
 [ext_resource type="Texture2D" uid="uid://bdir6gc26i3ec" path="res://Assets/Sprites/Jester/PNGs/Jester-King_0.png" id="21_bf2am"]
 [ext_resource type="Texture2D" uid="uid://c4ss32mvdewi3" path="res://Assets/Sprites/Jester/PNGs/Jester-King_1.png" id="22_igogu"]
 [ext_resource type="Texture2D" uid="uid://umbgxq2wusoj" path="res://Assets/Sprites/Jester/PNGs/Jester-Money_0.png" id="23_lqhvu"]
+[ext_resource type="Texture2D" uid="uid://onmkp8qsixac" path="res://Assets/Sprites/Jester/PNGs/Jester-Kitchen_0.png" id="23_m1vh0"]
 [ext_resource type="Texture2D" uid="uid://b6jbkdre6wta6" path="res://Assets/Sprites/Jester/PNGs/Jester-Money_1.png" id="24_a5r23"]
+[ext_resource type="Texture2D" uid="uid://ckqiranqt72ne" path="res://Assets/Sprites/Jester/PNGs/Jester-Kitchen_1.png" id="24_ufnn8"]
 [ext_resource type="Texture2D" uid="uid://d3k55806o263o" path="res://Assets/Sprites/Jester/PNGs/Jester-Peasants_0.png" id="25_keumx"]
 [ext_resource type="Texture2D" uid="uid://f21ay623jqh4" path="res://Assets/Sprites/Jester/PNGs/Jester-Peasants_1.png" id="26_5vtmu"]
 [ext_resource type="Texture2D" uid="uid://jvwyux481vo4" path="res://Assets/Sprites/Jester/PNGs/Jester-Queen_0.png" id="27_b1q6a"]
@@ -167,6 +169,17 @@ animations = [{
 }, {
 "frames": [{
 "duration": 2.0,
+"texture": ExtResource("23_m1vh0")
+}, {
+"duration": 2.0,
+"texture": ExtResource("24_ufnn8")
+}],
+"loop": true,
+"name": &"Kitchen",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 2.0,
 "texture": ExtResource("23_lqhvu")
 }, {
 "duration": 2.0,
@@ -271,5 +284,5 @@ script = ExtResource("1_sa8j2")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -450)
 sprite_frames = SubResource("SpriteFrames_nb5su")
-animation = &"Idle"
-frame_progress = 0.623159
+animation = &"Kitchen"
+frame_progress = 0.181475

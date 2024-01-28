@@ -35,7 +35,6 @@ visible = false
 [node name="thought_bubble_ui" parent="." instance=ExtResource("7_wchay")]
 
 [node name="reaction_options_ui" parent="." instance=ExtResource("8_lt7mv")]
-visible = false
 
 [node name="Jester" parent="." instance=ExtResource("9_e283u")]
 position = Vector2(1571, 957)
