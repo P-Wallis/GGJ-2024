@@ -24,16 +24,12 @@ func _ready():
 	thoughtUI = $thought_bubble_ui
 	optionsUI = $reaction_options_ui
 	
-	# connect the action slots to this
-	for actionSlot in chooseUI.actionSlots:
-		actionSlot.levelManager = self
+	chooseUI.init(self)
 	
 	GoToPhase(LevelPhase.MESSAGE)
 
 func OnChooseCardsComplete():
-	cards = [];
-	for actionSlot in chooseUI.actionSlots:
-		cards.append(actionSlot.card)
+	cards = chooseUI.GetActionSlotCards()
 	GoToPhase(LevelPhase.DANCE)
 	pass
 	
@@ -64,6 +60,7 @@ func GoToPhase(newPhase:LevelPhase):
 		LevelPhase.CHOOSE_CARDS:
 			#  show the choosing UI
 			chooseUI.visible = true
+			chooseUI.reset()
 			pass
 		LevelPhase.DANCE:
 			# show the dannce

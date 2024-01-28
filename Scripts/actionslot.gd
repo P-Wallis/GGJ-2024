@@ -26,3 +26,7 @@ func are_all_slots_filled():
 			return false
 	
 	return true
+	
+func reset():
+	card = null
+	texture = null
