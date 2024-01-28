@@ -1,6 +1,6 @@
 extends Button
 
-@export var levelParent:Node
+@export var startScreen:Node
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -12,9 +12,9 @@ func _process(delta):
 	pass
 	
 func _pressed():
-	print("pressed")
+	startScreen.queue_free()
 	var scene_to_instance = load("res://Scenes/intro.tscn")
 	var instance = scene_to_instance.instantiate()
-	levelParent.add_child(instance)
+	get_tree().get_root().add_child(instance)
 	
 
