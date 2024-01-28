@@ -1,8 +1,10 @@
-[gd_resource type="Resource" script_class="Card" load_steps=2 format=3 uid="uid://bcvdfpaapb6mw"]
+[gd_resource type="Resource" script_class="Card" load_steps=3 format=3 uid="uid://bcvdfpaapb6mw"]
 
 [ext_resource type="Script" path="res://Scripts/cardResource.gd" id="1_fyb8k"]
+[ext_resource type="Texture2D" uid="uid://da5yrxuqhpi0k" path="res://Assets/Sprites/Cards UI/Peasant.png" id="1_txc3f"]
 
 [resource]
 script = ExtResource("1_fyb8k")
 word = "Peasants"
 type = 0
+icon = ExtResource("1_txc3f")

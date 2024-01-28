@@ -11,7 +11,7 @@ func loop_through_action_slots_and_print_names():
 
 	# Now that 5 seconds have passed, get all action slots.
 	var action_slots = get_tree().get_nodes_in_group("action_slots")
-	print("got action slots")
+
 	for action_slot in action_slots:
 		if action_slot.card != null:
 			print(action_slot.card.word)

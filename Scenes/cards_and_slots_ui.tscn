@@ -1,12 +1,29 @@
-[gd_scene load_steps=8 format=3 uid="uid://5v7wo4v4rb7y"]
+[gd_scene load_steps=25 format=3 uid="uid://cawgtx8itufjp"]
 
 [ext_resource type="Script" path="res://Scripts/actionslotservice.gd" id="1_3nsv5"]
-[ext_resource type="PackedScene" path="res://Scenes/card.tscn" id="2_r0bt4"]
-[ext_resource type="Script" path="res://Scripts/actionslot.gd" id="3_ts763"]
-[ext_resource type="Texture2D" uid="uid://co2dn7r1j8v03" path="res://icon.svg" id="4_x533p"]
+[ext_resource type="PackedScene" uid="uid://ci53oog6cxy58" path="res://Scenes/actionslot.tscn" id="2_4rlrw"]
+[ext_resource type="Script" path="res://Scripts/card_grid_populater.gd" id="4_4h1py"]
 [ext_resource type="Resource" uid="uid://mp1epypx480u" path="res://CardData/Baby.tres" id="5_xuilb"]
 [ext_resource type="Resource" uid="uid://dawd57rt7p24n" path="res://CardData/Banana.tres" id="6_vttwr"]
 [ext_resource type="Resource" uid="uid://cuyc3p7470gnx" path="res://CardData/Baron.tres" id="7_evwkx"]
+[ext_resource type="Resource" uid="uid://4pc6pcu3svsk" path="res://CardData/Bathroom.tres" id="8_dgfbw"]
+[ext_resource type="Resource" uid="uid://cs78gjqnw0pl" path="res://CardData/Death.tres" id="9_cs8gx"]
+[ext_resource type="Resource" uid="uid://dk3rlsl3i0v0l" path="res://CardData/Eat.tres" id="10_vgjg1"]
+[ext_resource type="Resource" uid="uid://tipaxx2gi4wb" path="res://CardData/Fields.tres" id="11_xmsys"]
+[ext_resource type="Resource" uid="uid://b1u2e874fxpqi" path="res://CardData/Fire.tres" id="12_vg5fl"]
+[ext_resource type="Resource" uid="uid://fnconu0fn64b" path="res://CardData/Gate.tres" id="13_kvxi4"]
+[ext_resource type="Resource" uid="uid://cifc1lpx60gyi" path="res://CardData/King.tres" id="14_ps0lg"]
+[ext_resource type="Resource" uid="uid://btrxsnbgeu60s" path="res://CardData/Kitchen.tres" id="15_7gile"]
+[ext_resource type="Resource" uid="uid://bj6j17xyahdnm" path="res://CardData/Money.tres" id="16_th63u"]
+[ext_resource type="Resource" uid="uid://bcvdfpaapb6mw" path="res://CardData/Peasants.tres" id="17_hryth"]
+[ext_resource type="Resource" uid="uid://dwoyb72dui4b0" path="res://CardData/Queen.tres" id="18_efinj"]
+[ext_resource type="Resource" uid="uid://dyr7xg0h5t7u8" path="res://CardData/Sing.tres" id="19_5w14o"]
+[ext_resource type="Resource" uid="uid://cadnlr2e7b5pb" path="res://CardData/Theft.tres" id="20_6hvob"]
+[ext_resource type="Resource" uid="uid://crrf65cctp80f" path="res://CardData/Treasury.tres" id="21_ol652"]
+[ext_resource type="Resource" uid="uid://l01sryuxn75e" path="res://CardData/Trip.tres" id="22_5enmu"]
+[ext_resource type="Resource" uid="uid://bpi64r4ibcdx3" path="res://CardData/Vikings.tres" id="23_o0pr8"]
+[ext_resource type="Resource" uid="uid://3dptq7r03gyb" path="res://CardData/Weapons.tres" id="24_br6le"]
+[ext_resource type="Texture2D" uid="uid://lkg3bdsahs4n" path="res://Assets/Sprites/Cards UI/Hue_Saturation 2.png" id="25_1icyu"]
 
 [node name="UI" type="CanvasLayer"]
 
@@ -15,47 +32,48 @@ layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_3nsv5")
 
-[node name="action_slot1" parent="action_slots" instance=ExtResource("2_r0bt4")]
-offset_left = 694.0
-offset_top = 826.0
-offset_right = 794.0
-offset_bottom = 926.0
-script = ExtResource("3_ts763")
+[node name="action_slot1" parent="action_slots" instance=ExtResource("2_4rlrw")]
+layout_mode = 0
+offset_left = 693.0
+offset_top = 955.0
+offset_right = 793.0
+offset_bottom = 1055.0
 
-[node name="action_slot2" parent="action_slots" instance=ExtResource("2_r0bt4")]
-offset_left = 842.0
-offset_top = 828.0
-offset_right = 942.0
-offset_bottom = 928.0
-script = ExtResource("3_ts763")
+[node name="action_slot2" parent="action_slots" instance=ExtResource("2_4rlrw")]
+layout_mode = 0
+offset_left = 848.0
+offset_top = 954.0
+offset_right = 948.0
+offset_bottom = 1054.0
 
-[node name="action_cards" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 0
+[node name="action_slot3" parent="action_slots" instance=ExtResource("2_4rlrw")]
+layout_mode = 0
+offset_left = 996.0
+offset_top = 954.0
+offset_right = 1096.0
+offset_bottom = 1054.0
 
-[node name="baby_card" parent="action_cards" instance=ExtResource("2_r0bt4")]
-offset_left = 518.0
-offset_top = 314.0
-offset_right = 618.0
-offset_bottom = 414.0
-texture = ExtResource("4_x533p")
-card = ExtResource("5_xuilb")
-metadata/Name = "Baby"
+[node name="action_slot4" parent="action_slots" instance=ExtResource("2_4rlrw")]
+layout_mode = 0
+offset_left = 1144.0
+offset_top = 957.0
+offset_right = 1244.0
+offset_bottom = 1057.0
 
-[node name="banana_card" parent="action_cards" instance=ExtResource("2_r0bt4")]
-offset_left = 688.0
-offset_top = 308.0
-offset_right = 788.0
-offset_bottom = 408.0
-texture = ExtResource("4_x533p")
-card = ExtResource("6_vttwr")
-metadata/Name = "Banana"
+[node name="GridBackground" type="TextureRect" parent="."]
+offset_left = 218.0
+offset_top = 62.0
+offset_right = 1641.0
+offset_bottom = 923.0
+texture = ExtResource("25_1icyu")
 
-[node name="baron_card" parent="action_cards" instance=ExtResource("2_r0bt4")]
-offset_left = 853.0
-offset_top = 309.0
-offset_right = 953.0
-offset_bottom = 409.0
-texture = ExtResource("4_x533p")
-card = ExtResource("7_evwkx")
-metadata/Name = "Baron"
+[node name="action_cards" type="GridContainer" parent="GridBackground" node_paths=PackedStringArray("grid")]
+layout_mode = 0
+offset_left = 308.0
+offset_top = 223.0
+offset_right = 308.0
+offset_bottom = 223.0
+columns = 5
+script = ExtResource("4_4h1py")
+cards = Array[Resource("res://Scripts/cardResource.gd")]([ExtResource("5_xuilb"), ExtResource("6_vttwr"), ExtResource("7_evwkx"), ExtResource("8_dgfbw"), ExtResource("9_cs8gx"), ExtResource("10_vgjg1"), ExtResource("11_xmsys"), ExtResource("12_vg5fl"), ExtResource("13_kvxi4"), ExtResource("14_ps0lg"), ExtResource("15_7gile"), ExtResource("16_th63u"), ExtResource("17_hryth"), ExtResource("18_efinj"), ExtResource("19_5w14o"), ExtResource("20_6hvob"), ExtResource("21_ol652"), ExtResource("22_5enmu"), ExtResource("23_o0pr8"), ExtResource("24_br6le")])
+grid = NodePath(".")

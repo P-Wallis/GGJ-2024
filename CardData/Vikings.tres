@@ -1,8 +1,10 @@
-[gd_resource type="Resource" script_class="Card" load_steps=2 format=3 uid="uid://bpi64r4ibcdx3"]
+[gd_resource type="Resource" script_class="Card" load_steps=3 format=3 uid="uid://bpi64r4ibcdx3"]
 
 [ext_resource type="Script" path="res://Scripts/cardResource.gd" id="1_6eixw"]
+[ext_resource type="Texture2D" uid="uid://bxw2s00djlbyw" path="res://Assets/Sprites/Cards UI/Vicking.png" id="1_8e51w"]
 
 [resource]
 script = ExtResource("1_6eixw")
 word = "Vikings"
 type = 0
+icon = ExtResource("1_8e51w")

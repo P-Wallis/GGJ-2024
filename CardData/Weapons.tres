@@ -1,8 +1,10 @@
-[gd_resource type="Resource" script_class="Card" load_steps=2 format=3 uid="uid://3dptq7r03gyb"]
+[gd_resource type="Resource" script_class="Card" load_steps=3 format=3 uid="uid://3dptq7r03gyb"]
 
 [ext_resource type="Script" path="res://Scripts/cardResource.gd" id="1_5xg1t"]
+[ext_resource type="Texture2D" uid="uid://cajnbspqbowah" path="res://Assets/Sprites/Cards UI/Weapons.png" id="1_fx6jw"]
 
 [resource]
 script = ExtResource("1_5xg1t")
 word = "Weapons"
 type = 2
+icon = ExtResource("1_fx6jw")
