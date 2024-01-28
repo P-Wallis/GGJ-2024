@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://w3kqqvi3m1oc"
-path="res://.godot/imported/Foot2.png-b66b024a6cb22340da25fcbb1939bd82.ctex"
+uid="uid://dqxfhjxt4n23g"
+path="res://.godot/imported/King.png-67e8edeff9730fa4913086d0eeacdc4a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Jester/Foot2.png"
-dest_files=["res://.godot/imported/Foot2.png-b66b024a6cb22340da25fcbb1939bd82.ctex"]
+source_file="res://Assets/Sprites/Cards UI/King.png"
+dest_files=["res://.godot/imported/King.png-67e8edeff9730fa4913086d0eeacdc4a.ctex"]
 
 [params]
 

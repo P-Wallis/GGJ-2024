@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d07r6ndo4i08s"
-path="res://.godot/imported/pompom.png-a282abab439577697f98ad9961da0479.ctex"
+uid="uid://cajnbspqbowah"
+path="res://.godot/imported/Weapons.png-feec46aec22d378c7cf2155b24abd2e7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Jester/pompom.png"
-dest_files=["res://.godot/imported/pompom.png-a282abab439577697f98ad9961da0479.ctex"]
+source_file="res://Assets/Sprites/Cards UI/Weapons.png"
+dest_files=["res://.godot/imported/Weapons.png-feec46aec22d378c7cf2155b24abd2e7.ctex"]
 
 [params]
 

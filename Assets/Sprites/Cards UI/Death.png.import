@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dnypri0ka2x28"
-path="res://.godot/imported/Expresion.png-6b8d7dacff29293ee77a3ef9023367d0.ctex"
+uid="uid://drhtwhl0crfn3"
+path="res://.godot/imported/Death.png-b31333c128e6cb8739aa3a81158f67d8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Jester/Expresion.png"
-dest_files=["res://.godot/imported/Expresion.png-6b8d7dacff29293ee77a3ef9023367d0.ctex"]
+source_file="res://Assets/Sprites/Cards UI/Death.png"
+dest_files=["res://.godot/imported/Death.png-b31333c128e6cb8739aa3a81158f67d8.ctex"]
 
 [params]
 

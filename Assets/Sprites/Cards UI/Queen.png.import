@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c45gcj8r2xrah"
-path="res://.godot/imported/Arm.png-dba5c57115da8c427791d598f3f99731.ctex"
+uid="uid://ccw5wny083ie8"
+path="res://.godot/imported/Queen.png-b24b142b2daf8f144039129bfc8d8913.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Jester/Arm.png"
-dest_files=["res://.godot/imported/Arm.png-dba5c57115da8c427791d598f3f99731.ctex"]
+source_file="res://Assets/Sprites/Cards UI/Queen.png"
+dest_files=["res://.godot/imported/Queen.png-b24b142b2daf8f144039129bfc8d8913.ctex"]
 
 [params]
 

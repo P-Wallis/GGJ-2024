@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://chjuy82rtjib2"
-path="res://.godot/imported/face.png-a71899bd18f1fa360fa3a28f3130d35f.ctex"
+uid="uid://bt5aywqgabtsy"
+path="res://.godot/imported/Banana.png-6909f9ed7aba006f979d3661fb259ccd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Jester/face.png"
-dest_files=["res://.godot/imported/face.png-a71899bd18f1fa360fa3a28f3130d35f.ctex"]
+source_file="res://Assets/Sprites/Cards UI/Banana.png"
+dest_files=["res://.godot/imported/Banana.png-6909f9ed7aba006f979d3661fb259ccd.ctex"]
 
 [params]
 

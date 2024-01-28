@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ci3uuq21t2qm5"
-path="res://.godot/imported/Atlas.png-626f95ba0afebe2809ace6a90b34d30f.ctex"
+uid="uid://brein6albhf0h"
+path="res://.godot/imported/Theft.png-5570d977f32be364e7013a9fc38ea29b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Jester/Atlas.png"
-dest_files=["res://.godot/imported/Atlas.png-626f95ba0afebe2809ace6a90b34d30f.ctex"]
+source_file="res://Assets/Sprites/Cards UI/Theft.png"
+dest_files=["res://.godot/imported/Theft.png-5570d977f32be364e7013a9fc38ea29b.ctex"]
 
 [params]
 

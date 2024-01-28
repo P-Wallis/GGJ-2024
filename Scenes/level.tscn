@@ -7,13 +7,13 @@
 
 [node name="Level" type="Node2D"]
 
-[node name="BGbackground" type="Sprite2D" parent="."]
+[node name="BG" type="Sprite2D" parent="."]
 position = Vector2(0, -63)
 scale = Vector2(0.966667, 0.966667)
 texture = ExtResource("1_tdkdg")
 centered = false
 
-[node name="KingPh" type="Sprite2D" parent="."]
+[node name="King" type="Sprite2D" parent="."]
 position = Vector2(0, 79.4843)
 scale = Vector2(0.916094, 0.916093)
 texture = ExtResource("2_737ks")

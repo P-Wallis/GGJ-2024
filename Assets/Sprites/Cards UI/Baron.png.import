@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bjqqqgvofvbqb"
-path="res://.godot/imported/Body.png-6dd86516e76b856d1c400b09537bd350.ctex"
+uid="uid://how40a6s2aj6"
+path="res://.godot/imported/Baron.png-e03e2c2bcf559819e1d912e39c32cdbe.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Jester/Body.png"
-dest_files=["res://.godot/imported/Body.png-6dd86516e76b856d1c400b09537bd350.ctex"]
+source_file="res://Assets/Sprites/Cards UI/Baron.png"
+dest_files=["res://.godot/imported/Baron.png-e03e2c2bcf559819e1d912e39c32cdbe.ctex"]
 
 [params]
 

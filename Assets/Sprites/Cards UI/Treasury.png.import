@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cg40ginsade5s"
-path="res://.godot/imported/Hand_Open.png-0920e0c7ce0ddbe162ae0453dd6c78b5.ctex"
+uid="uid://c0rd8ijw2itcu"
+path="res://.godot/imported/Treasury.png-779407d994d9d12ef778f0dd171aa3d4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Jester/Hand_Open.png"
-dest_files=["res://.godot/imported/Hand_Open.png-0920e0c7ce0ddbe162ae0453dd6c78b5.ctex"]
+source_file="res://Assets/Sprites/Cards UI/Treasury.png"
+dest_files=["res://.godot/imported/Treasury.png-779407d994d9d12ef778f0dd171aa3d4.ctex"]
 
 [params]
 
