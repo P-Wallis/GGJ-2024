@@ -1,9 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://5v7wo4v4rb7y"]
+[gd_scene load_steps=26 format=3 uid="uid://cawgtx8itufjp"]
 
 [ext_resource type="Script" path="res://Scripts/actionslotservice.gd" id="1_3nsv5"]
-[ext_resource type="PackedScene" path="res://Scenes/card.tscn" id="2_r0bt4"]
+[ext_resource type="PackedScene" uid="uid://bsg6rybm557fg" path="res://Scenes/card.tscn" id="2_r0bt4"]
 [ext_resource type="Script" path="res://Scripts/actionslot.gd" id="3_ts763"]
-[ext_resource type="Script" path="res://Scenes/card_grid_populater.gd" id="4_8ja86"]
+[ext_resource type="Script" path="res://Scripts/card_grid_populater.gd" id="4_4h1py"]
 [ext_resource type="Texture2D" uid="uid://co2dn7r1j8v03" path="res://icon.svg" id="4_x533p"]
 [ext_resource type="Resource" uid="uid://mp1epypx480u" path="res://CardData/Baby.tres" id="5_xuilb"]
 [ext_resource type="Resource" uid="uid://dawd57rt7p24n" path="res://CardData/Banana.tres" id="6_vttwr"]
@@ -34,6 +34,7 @@ anchors_preset = 0
 script = ExtResource("1_3nsv5")
 
 [node name="action_slot1" parent="action_slots" instance=ExtResource("2_r0bt4")]
+layout_mode = 0
 offset_left = 694.0
 offset_top = 826.0
 offset_right = 794.0
@@ -41,6 +42,7 @@ offset_bottom = 926.0
 script = ExtResource("3_ts763")
 
 [node name="action_slot2" parent="action_slots" instance=ExtResource("2_r0bt4")]
+layout_mode = 0
 offset_left = 842.0
 offset_top = 828.0
 offset_right = 942.0
@@ -50,8 +52,11 @@ script = ExtResource("3_ts763")
 [node name="action_cards" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
+script = ExtResource("4_4h1py")
+cards = Array[Resource("res://Scripts/cardResource.gd")]([ExtResource("5_xuilb"), ExtResource("6_vttwr"), ExtResource("7_evwkx"), ExtResource("8_dgfbw"), ExtResource("9_cs8gx"), ExtResource("10_vgjg1"), ExtResource("11_xmsys"), ExtResource("12_vg5fl"), ExtResource("13_kvxi4"), ExtResource("14_ps0lg"), ExtResource("15_7gile"), ExtResource("16_th63u"), ExtResource("17_hryth"), ExtResource("18_efinj"), ExtResource("19_5w14o"), ExtResource("20_6hvob"), ExtResource("21_ol652"), ExtResource("22_5enmu"), ExtResource("23_o0pr8"), ExtResource("24_br6le")])
 
 [node name="baby_card" parent="action_cards" instance=ExtResource("2_r0bt4")]
+layout_mode = 0
 offset_left = 518.0
 offset_top = 314.0
 offset_right = 618.0
@@ -61,6 +66,7 @@ card = ExtResource("5_xuilb")
 metadata/Name = "Baby"
 
 [node name="banana_card" parent="action_cards" instance=ExtResource("2_r0bt4")]
+layout_mode = 0
 offset_left = 688.0
 offset_top = 308.0
 offset_right = 788.0
@@ -70,6 +76,7 @@ card = ExtResource("6_vttwr")
 metadata/Name = "Banana"
 
 [node name="baron_card" parent="action_cards" instance=ExtResource("2_r0bt4")]
+layout_mode = 0
 offset_left = 853.0
 offset_top = 309.0
 offset_right = 953.0
