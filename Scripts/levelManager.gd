@@ -11,6 +11,7 @@ enum LevelPhase {
 var phase:LevelPhase
 @export var cardPairs:CardPairs
 @export var messages:Array[MessageResource]
+@export var levelNode:Node
 var messageUI:MessageUI
 var chooseUI:CardsAndSlotsUI
 var thoughtUI:CanvasLayer
@@ -101,9 +102,10 @@ func GoToPhase(newPhase:LevelPhase):
 func GoToWinOrFailScreen(didWin):
 	if didWin:
 		print('win')
-		get_tree().get_root().queue_free()
+		levelNode.queue_free()
 		var scene_to_instance = load("res://Scenes/win_or_fail_screen.tscn")
 		var instance = scene_to_instance.instantiate()
+		instance.Win()
 		get_tree().get_root().add_child(instance)
 	else:
 		print('fail')

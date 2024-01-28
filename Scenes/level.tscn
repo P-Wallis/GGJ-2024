@@ -4,17 +4,18 @@
 [ext_resource type="Texture2D" uid="uid://j6mtetcsh4ch" path="res://Assets/Sprites/BGbackground.png" id="1_tdkdg"]
 [ext_resource type="Texture2D" uid="uid://cwcxc727le3ra" path="res://Assets/Sprites/King_PH.png" id="2_737ks"]
 [ext_resource type="Resource" uid="uid://b8uhwy5srtjuk" path="res://MessageData/VikingsAtGate.tres" id="2_tgdl4"]
-[ext_resource type="Resource" uid="uid://tcy7bt3xdtuj" path="res://MessageData/TheQueenIsDead.tres" id="3_at1gl"]
-[ext_resource type="Resource" uid="uid://dc1mho6dto4lg" path="res://MessageData/TheBaronTookYourMoney.tres" id="4_5kihh"]
+[ext_resource type="Resource" uid="uid://tcy7bt3xdtuj" path="res://MessageData/TheBaronTookYourMoney.tres" id="3_at1gl"]
+[ext_resource type="Resource" uid="uid://dc1mho6dto4lg" path="res://MessageData/TheQueenIsDead.tres" id="4_5kihh"]
 [ext_resource type="PackedScene" uid="uid://cawgtx8itufjp" path="res://Scenes/UIScenes/cards_and_slots_ui.tscn" id="4_8dvat"]
 [ext_resource type="PackedScene" uid="uid://dkdbhb5k75xx2" path="res://Scenes/UIScenes/message_ui.tscn" id="5_0apc2"]
 [ext_resource type="PackedScene" uid="uid://dui72aep4hato" path="res://Scenes/UIScenes/thought_bubble_ui.tscn" id="7_wchay"]
 [ext_resource type="PackedScene" uid="uid://cps5ihmajsylk" path="res://Scenes/UIScenes/reaction_options_ui.tscn" id="8_lt7mv"]
 [ext_resource type="PackedScene" uid="uid://bdsqh086unyq7" path="res://Scenes/jester.tscn" id="9_e283u"]
 
-[node name="Level" type="Node2D"]
+[node name="Level" type="Node2D" node_paths=PackedStringArray("levelNode")]
 script = ExtResource("1_l67pb")
 messages = Array[Resource("res://Scripts/messageResource.gd")]([ExtResource("2_tgdl4"), ExtResource("3_at1gl"), ExtResource("4_5kihh")])
+levelNode = NodePath(".")
 
 [node name="BG" type="Sprite2D" parent="."]
 position = Vector2(0, -63)
