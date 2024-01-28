@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" path="res://Scripts/levelManager.gd" id="1_l67pb"]
 [ext_resource type="Texture2D" uid="uid://j6mtetcsh4ch" path="res://Assets/Sprites/BGbackground.png" id="1_tdkdg"]
-[ext_resource type="Texture2D" uid="uid://cwcxc727le3ra" path="res://Assets/Sprites/King_PH.png" id="2_737ks"]
 [ext_resource type="Resource" uid="uid://b8uhwy5srtjuk" path="res://MessageData/VikingsAtGate.tres" id="2_tgdl4"]
 [ext_resource type="Resource" uid="uid://tcy7bt3xdtuj" path="res://MessageData/TheBaronTookYourMoney.tres" id="3_at1gl"]
 [ext_resource type="Resource" uid="uid://dc1mho6dto4lg" path="res://MessageData/TheQueenIsDead.tres" id="4_5kihh"]
