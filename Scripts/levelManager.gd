@@ -9,11 +9,14 @@ enum LevelPhase {
 }
 
 var phase:LevelPhase
+@export var cardPairs:CardPairs
 @export var message:MessageResource
 var messageUI:MessageUI
-var chooseUI:CanvasLayer
+var chooseUI:CardsAndSlotsUI
 var thoughtUI:CanvasLayer
 var optionsUI:ReactionOptionsUI
+
+var cards:Array[Card]
 
 func _ready():
 	messageUI = $message_ui
@@ -21,10 +24,22 @@ func _ready():
 	thoughtUI = $thought_bubble_ui
 	optionsUI = $reaction_options_ui
 	
+	# connect the action slots to this
+	for actionSlot in chooseUI.actionSlots:
+		actionSlot.levelManager = self
+	
 	GoToPhase(LevelPhase.MESSAGE)
 
+func OnChooseCardsComplete():
+	cards = [];
+	for actionSlot in chooseUI.actionSlots:
+		cards.append(actionSlot.card)
+	GoToPhase(LevelPhase.DANCE)
+	pass
+	
 func GoToPhaseChooseCards():
 	GoToPhase(LevelPhase.CHOOSE_CARDS)
+	
 func GoToNextLevel():
 	pass
 
@@ -54,6 +69,7 @@ func GoToPhase(newPhase:LevelPhase):
 			# show the dannce
 			# show the king's thoughts
 			thoughtUI.visible = true
+			GoToPhase(LevelPhase.KING_REACTION)
 			pass
 		LevelPhase.KING_REACTION:
 			# Evaluate the player's choices
@@ -61,14 +77,16 @@ func GoToPhase(newPhase:LevelPhase):
 			# Show "Done" or "Retry" buttons
 			thoughtUI.visible = true
 			optionsUI.visible = true
-			var success = true; # use the chosen cards to determine success
-			if(success):
+			
+			if(message.DoCardsMatchTheMessage(cards)):
+				# King success react
 				optionsUI.button.text = "Done"
 				if(optionsUI.button.pressed.is_connected(self.GoToPhaseChooseCards)):
 					optionsUI.button.pressed.disconnect(self.GoToPhaseChooseCards)
 				if(!optionsUI.button.pressed.is_connected(self.GoToNextLevel)):
 					optionsUI.button.pressed.connect(self.GoToNextLevel)
 			else:
+				# King Fail react
 				optionsUI.button.text = "Retry"
 				if(optionsUI.button.pressed.is_connected(self.GoToNextLevel)):
 					optionsUI.button.pressed.disconnect(self.GoToNextLevel)
