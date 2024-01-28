@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://bpkpph3ln7886"]
+[gd_scene load_steps=11 format=3 uid="uid://bpkpph3ln7886"]
 
 [ext_resource type="Texture2D" uid="uid://j6mtetcsh4ch" path="res://Assets/Sprites/BGbackground.png" id="1_tdkdg"]
 [ext_resource type="Texture2D" uid="uid://cwcxc727le3ra" path="res://Assets/Sprites/King_PH.png" id="2_737ks"]
@@ -7,6 +7,9 @@
 [ext_resource type="PackedScene" uid="uid://bsg6rybm557fg" path="res://Scenes/card.tscn" id="4_ryywa"]
 [ext_resource type="Texture2D" uid="uid://co2dn7r1j8v03" path="res://icon.svg" id="5_khg00"]
 [ext_resource type="Script" path="res://Scripts/actionslot.gd" id="6_bd423"]
+[ext_resource type="Resource" uid="uid://mp1epypx480u" path="res://CardData/Baby.tres" id="8_xhoo6"]
+[ext_resource type="Resource" uid="uid://dawd57rt7p24n" path="res://CardData/Banana.tres" id="9_aeuun"]
+[ext_resource type="Resource" uid="uid://cuyc3p7470gnx" path="res://CardData/Baron.tres" id="10_2mken"]
 
 [node name="Level" type="Node2D"]
 
@@ -52,6 +55,7 @@ offset_top = 314.0
 offset_right = 618.0
 offset_bottom = 414.0
 texture = ExtResource("5_khg00")
+Card = ExtResource("8_xhoo6")
 metadata/Name = "Baby"
 
 [node name="banana_card" parent="UI/action_cards" instance=ExtResource("4_ryywa")]
@@ -60,6 +64,7 @@ offset_top = 308.0
 offset_right = 788.0
 offset_bottom = 408.0
 texture = ExtResource("5_khg00")
+Card = ExtResource("9_aeuun")
 metadata/Name = "Banana"
 
 [node name="baron_card" parent="UI/action_cards" instance=ExtResource("4_ryywa")]
@@ -68,4 +73,5 @@ offset_top = 309.0
 offset_right = 953.0
 offset_bottom = 409.0
 texture = ExtResource("5_khg00")
+Card = ExtResource("10_2mken")
 metadata/Name = "Baron"
