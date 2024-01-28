@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://3x2hkle7jowh"]
+[gd_scene load_steps=14 format=3 uid="uid://3x2hkle7jowh"]
 
 [ext_resource type="FontFile" uid="uid://dd7gumdjab30j" path="res://Assets/Fonts/GRILLEDCHEESE_BTN.TTF" id="1_h21gv"]
 [ext_resource type="Script" path="res://Scenes/win_or_fail_screen.gd" id="1_y23od"]
@@ -6,6 +6,21 @@
 [ext_resource type="Script" path="res://Scenes/restart_button.gd" id="2_ktek4"]
 [ext_resource type="Texture2D" uid="uid://bxqjuu0odun4t" path="res://Assets/Sprites/Win1.png" id="3_ufpwr"]
 [ext_resource type="Texture2D" uid="uid://lkg3bdsahs4n" path="res://Assets/Sprites/Cards UI/Hue_Saturation 2.png" id="3_xjn3y"]
+[ext_resource type="Texture2D" uid="uid://bdq84iuqucn4y" path="res://Assets/Sprites/Win2.png" id="5_eaubu"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_et8vr"]
+animations = [{
+"frames": [{
+"duration": 2.0,
+"texture": ExtResource("3_ufpwr")
+}, {
+"duration": 2.0,
+"texture": ExtResource("5_eaubu")
+}],
+"loop": true,
+"name": &"Wave",
+"speed": 5.0
+}]
 
 [sub_resource type="Theme" id="Theme_x88vu"]
 
@@ -69,14 +84,12 @@ offset_bottom = 1107.0
 scale = Vector2(0.875776, 0.875776)
 texture = ExtResource("3_xjn3y")
 
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control"]
-layout_mode = 0
-offset_left = 324.0
-offset_top = 419.0
-offset_right = 1557.0
-offset_bottom = 1225.0
-scale = Vector2(0.598574, 0.598574)
-texture = ExtResource("3_ufpwr")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer/Control"]
+position = Vector2(676, 655)
+scale = Vector2(0.609181, 0.609181)
+sprite_frames = SubResource("SpriteFrames_et8vr")
+animation = &"Wave"
+frame_progress = 0.59695
 
 [node name="RichTextLabel" type="Label" parent="CanvasLayer/Control"]
 custom_minimum_size = Vector2(500, 200)
