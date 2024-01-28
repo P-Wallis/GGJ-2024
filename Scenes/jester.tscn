@@ -1,13 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://bdsqh086unyq7"]
+[gd_scene load_steps=2 format=3 uid="uid://bdsqh086unyq7"]
 
-[ext_resource type="Texture2D" uid="uid://cn86y7dn0aocb" path="res://Assets/Sprites/Jester/shadow.png" id="1_yh3c6"]
-[ext_resource type="Texture2D" uid="uid://ci3uuq21t2qm5" path="res://Assets/Sprites/Jester/Atlas.png" id="2_d14cu"]
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_oh2h4"]
+load_path = "res://.godot/imported/shadow.png-1d106b38e544ff4f0d25d7fe0bd82123.ctex"
 
 [node name="Jester" type="Node2D"]
 
 [node name="Shadow" type="Sprite2D" parent="."]
 position = Vector2(0, 2)
-texture = ExtResource("1_yh3c6")
+texture = SubResource("CompressedTexture2D_oh2h4")
 
 [node name="Polygons" type="Node2D" parent="."]
 position = Vector2(0, 20)
@@ -15,78 +15,42 @@ position = Vector2(0, 20)
 [node name="Head" type="Polygon2D" parent="Polygons"]
 position = Vector2(48, -584)
 offset = Vector2(-88, -543)
-texture = ExtResource("2_d14cu")
-polygon = PackedVector2Array(136.641, 532.824, 79.771, 542.748, 10.687, 529.389, -2.67175, 309.542, 114.885, 310.305, 172.519, 328.626, 178.244, 423.282)
-uv = PackedVector2Array(136.641, 532.824, 79.771, 542.748, 10.687, 529.389, -2.67175, 309.542, 114.885, 310.305, 172.519, 328.626, 178.244, 423.282)
 
 [node name="Body" type="Polygon2D" parent="Polygons"]
 offset = Vector2(-409, -595)
-texture = ExtResource("2_d14cu")
-polygon = PackedVector2Array(391.837, -10.8844, 514.966, -4.76191, 504.762, 595.238, 315.476, 590.476, 303.571, 465.476)
-uv = PackedVector2Array(391.837, -10.8844, 514.966, -4.76191, 504.762, 595.238, 315.476, 590.476, 303.571, 465.476)
 
 [node name="Arm" type="Polygon2D" parent="Polygons"]
 position = Vector2(-23, -532)
 offset = Vector2(-214, -296)
-texture = ExtResource("2_d14cu")
 skeleton = NodePath("../../Skeleton2D")
-polygon = PackedVector2Array(23.0089, 168.695, 100, 261.173, 231.416, 272.677, 237.611, 300.996, 223.009, 317.81, 94.2478, 310.73, 71.6814, 307.19, -0.884956, 193.473, 7.52212, 170.907)
-uv = PackedVector2Array(23.0089, 168.695, 100, 261.173, 231.416, 272.677, 237.611, 300.996, 223.009, 317.81, 94.2478, 310.73, 71.6814, 307.19, -0.884956, 193.473, 7.52212, 170.907)
-polygons = [PackedInt32Array(1, 5, 6), PackedInt32Array(1, 2, 5), PackedInt32Array(4, 2, 5), PackedInt32Array(4, 3, 2), PackedInt32Array(1, 0, 7, 6), PackedInt32Array(8, 7, 0)]
 bones = ["Hip", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0), "Hip/BodyLow", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0), "Hip/BodyLow/Chest", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0), "Hip/BodyLow/Chest/Head", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0), "Hip/BodyLow/Chest/Arm1", PackedFloat32Array(0, 1, 1, 1, 1, 1, 0, 0, 0), "Hip/BodyLow/Chest/Arm1/Arm1b", PackedFloat32Array(1, 0, 0, 0, 0, 0, 1, 1, 1), "Hip/BodyLow/Chest/Arm1/Arm1b/Hand", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0)]
 
 [node name="Arm2" type="Polygon2D" parent="Polygons"]
 position = Vector2(85, -526)
 scale = Vector2(-1, 1)
 offset = Vector2(-214, -296)
-texture = ExtResource("2_d14cu")
 skeleton = NodePath("../../Skeleton2D")
-polygon = PackedVector2Array(23.0089, 168.695, 100, 261.173, 231.416, 272.677, 237.611, 300.996, 223.009, 317.81, 94.2478, 310.73, 71.6814, 307.19, -0.884956, 193.473, 7.52212, 170.907)
-uv = PackedVector2Array(23.0089, 168.695, 100, 261.173, 231.416, 272.677, 237.611, 300.996, 223.009, 317.81, 94.2478, 310.73, 71.6814, 307.19, -0.884956, 193.473, 7.52212, 170.907)
-polygons = [PackedInt32Array(1, 5, 6), PackedInt32Array(1, 2, 4, 5), PackedInt32Array(2, 3, 4), PackedInt32Array(1, 0, 7, 6), PackedInt32Array(0, 8, 7)]
 bones = ["Hip", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0), "Hip/BodyLow", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0), "Hip/BodyLow/Chest", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0), "Hip/BodyLow/Chest/Head", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0), "Hip/BodyLow/Chest/Arm1", PackedFloat32Array(0, 1, 1, 1, 1, 1, 0, 0, 0), "Hip/BodyLow/Chest/Arm1/Arm1b", PackedFloat32Array(1, 0, 0, 0, 0, 0, 1, 1, 1), "Hip/BodyLow/Chest/Arm1/Arm1b/Hand", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0), "Hip/BodyLow/Chest/Arm2", PackedFloat32Array(0, 0.7, 1, 1, 1, 1, 0, 0, 0), "Hip/BodyLow/Chest/Arm2/Arm1b", PackedFloat32Array(1, 0, 0, 0, 0, 0, 1, 1, 1), "Hip/BodyLow/Chest/Arm2/Arm1b/Hand", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0)]
 
 [node name="Hat" type="Polygon2D" parent="Polygons"]
 position = Vector2(74, -773)
 offset = Vector2(-157, -142)
-texture = ExtResource("2_d14cu")
-polygon = PackedVector2Array(222.689, 189.916, -18.9076, 151.681, 40.3361, -27.3109, 329.832, 22.2689, 319.328, 161.345, 261.765, 144.538)
-uv = PackedVector2Array(222.689, 189.916, -18.9076, 151.681, 40.3361, -27.3109, 329.832, 22.2689, 319.328, 161.345, 261.765, 144.538)
 
 [node name="Pompom" type="Polygon2D" parent="Polygons/Hat"]
 position = Vector2(148, -16)
 offset = Vector2(-248, -198)
-texture = ExtResource("2_d14cu")
-polygon = PackedVector2Array(239.076, 165.966, 215.126, 207.143, 258.823, 237.395, 284.454, 186.134)
-uv = PackedVector2Array(239.076, 165.966, 215.126, 207.143, 258.823, 237.395, 284.454, 186.134)
-
-[node name="Pompom2" type="Polygon2D" parent="Polygons/Hat"]
-position = Vector2(-142, -24)
-offset = Vector2(-248, -198)
-texture = ExtResource("2_d14cu")
-polygon = PackedVector2Array(239.076, 165.966, 215.126, 207.143, 258.823, 237.395, 284.454, 186.134)
-uv = PackedVector2Array(239.076, 165.966, 215.126, 207.143, 258.823, 237.395, 284.454, 186.134)
 
 [node name="Foot1" type="Polygon2D" parent="Polygons"]
 position = Vector2(-86, -54)
 offset = Vector2(-270, -369)
-texture = ExtResource("2_d14cu")
-polygon = PackedVector2Array(297.917, 397.005, 179.948, 412.891, 167.708, 309.766, 307.031, 325.13)
-uv = PackedVector2Array(297.917, 397.005, 179.948, 412.891, 167.708, 309.766, 307.031, 325.13)
 
 [node name="Foot2" type="Polygon2D" parent="Polygons"]
 position = Vector2(72, -44)
 offset = Vector2(-199, -448)
-texture = ExtResource("2_d14cu")
-polygon = PackedVector2Array(175, 476.953, 243.229, 473.828, 305.469, 454.557, 296.354, 394.661, 183.594, 411.328, 167.969, 456.12)
-uv = PackedVector2Array(175, 476.953, 243.229, 473.828, 305.469, 454.557, 296.354, 394.661, 183.594, 411.328, 167.969, 456.12)
 
 [node name="HandOpen" type="Polygon2D" parent="Polygons"]
 position = Vector2(-229, -657)
 offset = Vector2(-241, -546)
-texture = ExtResource("2_d14cu")
-polygon = PackedVector2Array(178.223, 554.441, 246.991, 565.616, 308.883, 542.407, 266.476, 466.762, 167.049, 481.089)
-uv = PackedVector2Array(178.223, 554.441, 246.991, 565.616, 308.883, 542.407, 266.476, 466.762, 167.049, 481.089)
 
 [node name="Skeleton2D" type="Skeleton2D" parent="."]
 
