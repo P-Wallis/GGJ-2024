@@ -1,13 +1,13 @@
 [gd_scene load_steps=2 format=3 uid="uid://ci53oog6cxy58"]
 
-[ext_resource type="Script" path="res://Scripts/cardObject.gd" id="1_5cjhh"]
+[ext_resource type="Script" path="res://Scripts/actionslot.gd" id="1_5tkrm"]
 
 [node name="TextureRect" type="TextureRect"]
 custom_minimum_size = Vector2(100, 100)
 offset_right = 40.0
 offset_bottom = 40.0
 expand_mode = 1
-script = ExtResource("1_5cjhh")
+script = ExtResource("1_5tkrm")
 metadata/Name = ""
 
 [node name="Panel" type="Panel" parent="."]
