@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://bpkpph3ln7886"]
+[gd_scene load_steps=7 format=3 uid="uid://bpkpph3ln7886"]
 
 [ext_resource type="Texture2D" uid="uid://j6mtetcsh4ch" path="res://Assets/Sprites/BGbackground.png" id="1_tdkdg"]
 [ext_resource type="Texture2D" uid="uid://cwcxc727le3ra" path="res://Assets/Sprites/King_PH.png" id="2_737ks"]
 [ext_resource type="PackedScene" uid="uid://bdsqh086unyq7" path="res://Scenes/jester.tscn" id="3_gj51t"]
-[ext_resource type="PackedScene" uid="uid://bsg6rybm557fg" path="res://Scenes/draganddrop.tscn" id="4_ryywa"]
+[ext_resource type="PackedScene" uid="uid://bsg6rybm557fg" path="res://Scenes/card.tscn" id="4_ryywa"]
 [ext_resource type="Texture2D" uid="uid://co2dn7r1j8v03" path="res://icon.svg" id="5_khg00"]
+[ext_resource type="Script" path="res://Scripts/actionslot.gd" id="6_bd423"]
 
 [node name="Level" type="Node2D"]
 
@@ -32,18 +33,7 @@ offset_left = 694.0
 offset_top = 826.0
 offset_right = 794.0
 offset_bottom = 926.0
-
-[node name="ActionSlot2" parent="UI/ActionSlots" instance=ExtResource("4_ryywa")]
-offset_left = 847.0
-offset_top = 824.0
-offset_right = 947.0
-offset_bottom = 924.0
-
-[node name="ActionSlot3" parent="UI/ActionSlots" instance=ExtResource("4_ryywa")]
-offset_left = 1002.0
-offset_top = 824.0
-offset_right = 1102.0
-offset_bottom = 924.0
+script = ExtResource("6_bd423")
 
 [node name="ActionCards" type="Node" parent="UI"]
 
@@ -53,52 +43,4 @@ offset_top = 314.0
 offset_right = 618.0
 offset_bottom = 414.0
 texture = ExtResource("5_khg00")
-
-[node name="ActionCard5" parent="UI/ActionCards" instance=ExtResource("4_ryywa")]
-offset_left = 514.0
-offset_top = 453.0
-offset_right = 614.0
-offset_bottom = 553.0
-texture = ExtResource("5_khg00")
-
-[node name="ActionCard6" parent="UI/ActionCards" instance=ExtResource("4_ryywa")]
-offset_left = 714.0
-offset_top = 454.0
-offset_right = 814.0
-offset_bottom = 554.0
-texture = ExtResource("5_khg00")
-
-[node name="ActionCard7" parent="UI/ActionCards" instance=ExtResource("4_ryywa")]
-offset_left = 895.0
-offset_top = 457.0
-offset_right = 995.0
-offset_bottom = 557.0
-texture = ExtResource("5_khg00")
-
-[node name="ActionCard8" parent="UI/ActionCards" instance=ExtResource("4_ryywa")]
-offset_left = 1088.0
-offset_top = 461.0
-offset_right = 1188.0
-offset_bottom = 561.0
-texture = ExtResource("5_khg00")
-
-[node name="ActionCard2" parent="UI/ActionCards" instance=ExtResource("4_ryywa")]
-offset_left = 715.0
-offset_top = 313.0
-offset_right = 815.0
-offset_bottom = 413.0
-texture = ExtResource("5_khg00")
-
-[node name="ActionCard3" parent="UI/ActionCards" instance=ExtResource("4_ryywa")]
-offset_left = 901.0
-offset_top = 313.0
-offset_right = 1001.0
-offset_bottom = 413.0
-texture = ExtResource("5_khg00")
-
-[node name="ActionCard4" parent="UI/ActionCards" instance=ExtResource("4_ryywa")]
-offset_left = 1091.0
-offset_top = 310.0
-offset_right = 1191.0
-offset_bottom = 410.0
-texture = ExtResource("5_khg00")
+metadata/Name = "Baby"
