@@ -40,8 +40,9 @@ corner_radius_bottom_left = 10
 shadow_size = 3
 shadow_offset = Vector2(0, 3)
 
-[node name="WinOrFailScreen" type="Node2D"]
+[node name="WinOrFailScreen" type="Node2D" node_paths=PackedStringArray("message")]
 script = ExtResource("1_y23od")
+message = NodePath("CanvasLayer/Control/RichTextLabel")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
