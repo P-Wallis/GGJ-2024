@@ -1,5 +1,7 @@
 extends TextureRect
 
+@export var Card:Card
+
 func _get_drag_data(at_position):
 	var preview_texture = TextureRect.new()
 	preview_texture.texture = texture
@@ -11,7 +13,7 @@ func _get_drag_data(at_position):
 	
 	set_drag_preview(preview)
 	
-	var drag_data = {"texture": texture, "meta": get_meta("Name")}
+	var drag_data = {"texture": texture, "card": Card}
 	texture = null
 	
 	return drag_data

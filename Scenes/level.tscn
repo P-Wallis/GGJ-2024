@@ -1,12 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://bpkpph3ln7886"]
+[gd_scene load_steps=5 format=3 uid="uid://bpkpph3ln7886"]
 
 [ext_resource type="Texture2D" uid="uid://j6mtetcsh4ch" path="res://Assets/Sprites/BGbackground.png" id="1_tdkdg"]
 [ext_resource type="Texture2D" uid="uid://cwcxc727le3ra" path="res://Assets/Sprites/King_PH.png" id="2_737ks"]
 [ext_resource type="PackedScene" uid="uid://bdsqh086unyq7" path="res://Scenes/jester.tscn" id="3_gj51t"]
-[ext_resource type="Script" path="res://Scripts/actionslotservice.gd" id="4_h2gva"]
-[ext_resource type="PackedScene" uid="uid://bsg6rybm557fg" path="res://Scenes/card.tscn" id="4_ryywa"]
-[ext_resource type="Texture2D" uid="uid://co2dn7r1j8v03" path="res://icon.svg" id="5_khg00"]
-[ext_resource type="Script" path="res://Scripts/actionslot.gd" id="6_bd423"]
+[ext_resource type="PackedScene" uid="uid://cawgtx8itufjp" path="res://Scenes/cards_and_slots_ui.tscn" id="4_8dvat"]
 
 [node name="Level" type="Node2D"]
 
@@ -25,47 +22,4 @@ centered = false
 [node name="Jester" parent="." instance=ExtResource("3_gj51t")]
 position = Vector2(1510, 953)
 
-[node name="UI" type="Node" parent="."]
-
-[node name="action_slots" type="Node" parent="UI"]
-script = ExtResource("4_h2gva")
-
-[node name="action_slot1" parent="UI/action_slots" instance=ExtResource("4_ryywa")]
-offset_left = 694.0
-offset_top = 826.0
-offset_right = 794.0
-offset_bottom = 926.0
-script = ExtResource("6_bd423")
-
-[node name="action_slot2" parent="UI/action_slots" instance=ExtResource("4_ryywa")]
-offset_left = 842.0
-offset_top = 828.0
-offset_right = 942.0
-offset_bottom = 928.0
-script = ExtResource("6_bd423")
-
-[node name="action_cards" type="Node" parent="UI"]
-
-[node name="baby_card" parent="UI/action_cards" instance=ExtResource("4_ryywa")]
-offset_left = 518.0
-offset_top = 314.0
-offset_right = 618.0
-offset_bottom = 414.0
-texture = ExtResource("5_khg00")
-metadata/Name = "Baby"
-
-[node name="banana_card" parent="UI/action_cards" instance=ExtResource("4_ryywa")]
-offset_left = 688.0
-offset_top = 308.0
-offset_right = 788.0
-offset_bottom = 408.0
-texture = ExtResource("5_khg00")
-metadata/Name = "Banana"
-
-[node name="baron_card" parent="UI/action_cards" instance=ExtResource("4_ryywa")]
-offset_left = 853.0
-offset_top = 309.0
-offset_right = 953.0
-offset_bottom = 409.0
-texture = ExtResource("5_khg00")
-metadata/Name = "Baron"
+[node name="UI" parent="." instance=ExtResource("4_8dvat")]

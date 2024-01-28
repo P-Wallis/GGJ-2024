@@ -1,0 +1,57 @@
+[gd_scene load_steps=8 format=3 uid="uid://cawgtx8itufjp"]
+
+[ext_resource type="Script" path="res://Scripts/actionslotservice.gd" id="1_3nsv5"]
+[ext_resource type="PackedScene" uid="uid://bsg6rybm557fg" path="res://Scenes/card.tscn" id="2_r0bt4"]
+[ext_resource type="Script" path="res://Scripts/actionslot.gd" id="3_ts763"]
+[ext_resource type="Texture2D" uid="uid://co2dn7r1j8v03" path="res://icon.svg" id="4_x533p"]
+[ext_resource type="Resource" uid="uid://mp1epypx480u" path="res://CardData/Baby.tres" id="5_xuilb"]
+[ext_resource type="Resource" uid="uid://dawd57rt7p24n" path="res://CardData/Banana.tres" id="6_vttwr"]
+[ext_resource type="Resource" uid="uid://cuyc3p7470gnx" path="res://CardData/Baron.tres" id="7_evwkx"]
+
+[node name="UI" type="Node"]
+
+[node name="action_slots" type="Node" parent="."]
+script = ExtResource("1_3nsv5")
+
+[node name="action_slot1" parent="action_slots" instance=ExtResource("2_r0bt4")]
+offset_left = 694.0
+offset_top = 826.0
+offset_right = 794.0
+offset_bottom = 926.0
+script = ExtResource("3_ts763")
+
+[node name="action_slot2" parent="action_slots" instance=ExtResource("2_r0bt4")]
+offset_left = 842.0
+offset_top = 828.0
+offset_right = 942.0
+offset_bottom = 928.0
+script = ExtResource("3_ts763")
+
+[node name="action_cards" type="Node" parent="."]
+
+[node name="baby_card" parent="action_cards" instance=ExtResource("2_r0bt4")]
+offset_left = 518.0
+offset_top = 314.0
+offset_right = 618.0
+offset_bottom = 414.0
+texture = ExtResource("4_x533p")
+Card = ExtResource("5_xuilb")
+metadata/Name = "Baby"
+
+[node name="banana_card" parent="action_cards" instance=ExtResource("2_r0bt4")]
+offset_left = 688.0
+offset_top = 308.0
+offset_right = 788.0
+offset_bottom = 408.0
+texture = ExtResource("4_x533p")
+Card = ExtResource("6_vttwr")
+metadata/Name = "Banana"
+
+[node name="baron_card" parent="action_cards" instance=ExtResource("2_r0bt4")]
+offset_left = 853.0
+offset_top = 309.0
+offset_right = 953.0
+offset_bottom = 409.0
+texture = ExtResource("4_x533p")
+Card = ExtResource("7_evwkx")
+metadata/Name = "Baron"
