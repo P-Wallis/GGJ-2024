@@ -1,7 +1,7 @@
 [gd_scene load_steps=25 format=3 uid="uid://cawgtx8itufjp"]
 
 [ext_resource type="Script" path="res://Scripts/actionslotservice.gd" id="1_3nsv5"]
-[ext_resource type="PackedScene" uid="uid://ci53oog6cxy58" path="res://Scenes/actionslot.tscn" id="2_4rlrw"]
+[ext_resource type="PackedScene" uid="uid://ci53oog6cxy58" path="res://Scenes/UIScenes/actionslot.tscn" id="2_4rlrw"]
 [ext_resource type="Script" path="res://Scripts/card_grid_populater.gd" id="4_4h1py"]
 [ext_resource type="Resource" uid="uid://mp1epypx480u" path="res://CardData/Baby.tres" id="5_xuilb"]
 [ext_resource type="Resource" uid="uid://dawd57rt7p24n" path="res://CardData/Banana.tres" id="6_vttwr"]
