@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://Scripts/cardObject.gd" id="2_7dp08"]
 
 [node name="TextureRect" type="TextureRect"]
-custom_minimum_size = Vector2(100, 100)
+custom_minimum_size = Vector2(400, 400)
 offset_right = 40.0
 offset_bottom = 40.0
 expand_mode = 1
@@ -14,8 +14,16 @@ metadata/Name = ""
 [node name="Panel" type="TextureRect" parent="."]
 show_behind_parent = true
 layout_mode = 0
-offset_right = 400.0
-offset_bottom = 413.0
+offset_right = 1771.0
+offset_bottom = 1828.0
 scale = Vector2(0.250104, 0.250104)
 mouse_filter = 2
 texture = ExtResource("2_6xn3k")
+stretch_mode = 5
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 400.0
+offset_bottom = 413.0
+expand_mode = 5
+stretch_mode = 2
