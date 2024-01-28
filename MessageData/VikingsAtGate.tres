@@ -14,7 +14,6 @@
 [resource]
 script = ExtResource("1_bak1p")
 message = "The enemies are attacking the castle!"
-difficulty = 0
+difficulty = null
 requiredCards = Array[Resource("res://Scripts/cardResource.gd")]([ExtResource("1_fqab6"), ExtResource("2_e7f4p")])
 optionalCards = Array[Resource("res://Scripts/cardResource.gd")]([ExtResource("1_5d5dd"), ExtResource("2_i4lor"), ExtResource("3_c83v4"), ExtResource("4_tedw7"), ExtResource("5_g3d1m"), ExtResource("6_5vrmw"), ExtResource("7_074k8")])
-instantFailCards = Array[Resource("res://Scripts/cardResource.gd")]([])
