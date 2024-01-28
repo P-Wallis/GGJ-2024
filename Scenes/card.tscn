@@ -1,5 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://bsg6rybm557fg"]
+[gd_scene load_steps=3 format=3 uid="uid://bsg6rybm557fg"]
 
+[ext_resource type="Texture2D" uid="uid://djcnym1v6tedt" path="res://Assets/Sprites/Cards UI/Card_BG.png" id="2_6xn3k"]
 [ext_resource type="Script" path="res://Scripts/cardObject.gd" id="2_7dp08"]
 
 [node name="TextureRect" type="TextureRect"]
@@ -10,9 +11,11 @@ expand_mode = 1
 script = ExtResource("2_7dp08")
 metadata/Name = ""
 
-[node name="Panel" type="Panel" parent="."]
+[node name="Panel" type="TextureRect" parent="."]
 show_behind_parent = true
 layout_mode = 0
-offset_right = 100.0
-offset_bottom = 100.0
+offset_right = 400.0
+offset_bottom = 413.0
+scale = Vector2(0.250104, 0.250104)
 mouse_filter = 2
+texture = ExtResource("2_6xn3k")
