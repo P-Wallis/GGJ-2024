@@ -20,7 +20,7 @@ func getFailMessage(cards:Array[Card]):
 		idea = ideas[mood][randi() % ideas[mood].size()]
 	var _moodPair:Array[Card] = [cards[0], cards[1]]
 	if(pairs[mood].size() > 0):
-		moodPair = pairs[mood][randi() % pairs[mood].size()]
+		_moodPair = pairs[mood][randi() % pairs[mood].size()]
 	else:
 		match mood:
 			CardPairs.Emotion.AMUSED:

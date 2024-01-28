@@ -1,13 +1,16 @@
-[gd_scene load_steps=5 format=3 uid="uid://3x2hkle7jowh"]
+[gd_scene load_steps=6 format=3 uid="uid://3x2hkle7jowh"]
 
 [ext_resource type="FontFile" uid="uid://dd7gumdjab30j" path="res://Assets/Fonts/GRILLEDCHEESE_BTN.TTF" id="1_h21gv"]
+[ext_resource type="Script" path="res://Scenes/win_or_fail_screen.gd" id="1_y23od"]
 [ext_resource type="Script" path="res://Scenes/restart_button.gd" id="2_ktek4"]
 
 [sub_resource type="Theme" id="Theme_x88vu"]
 
 [sub_resource type="Theme" id="Theme_nhxkj"]
 
-[node name="WinOrFailScreen" type="Node2D"]
+[node name="WinOrFailScreen" type="Node2D" node_paths=PackedStringArray("message")]
+script = ExtResource("1_y23od")
+message = NodePath("CanvasLayer/Control/RichTextLabel")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -21,22 +24,22 @@ grow_vertical = 2
 
 [node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/Control"]
 clip_contents = false
-custom_minimum_size = Vector2(800, 200)
+custom_minimum_size = Vector2(1200, 200)
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
+offset_left = -600.0
+offset_top = -194.0
+offset_right = 600.0
+offset_bottom = 6.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = SubResource("Theme_x88vu")
 theme_override_fonts/normal_font = ExtResource("1_h21gv")
-theme_override_font_sizes/normal_font_size = 128
+theme_override_font_sizes/normal_font_size = 64
 text = "Message
 "
 fit_content = true
@@ -57,7 +60,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = SubResource("Theme_nhxkj")
 theme_override_fonts/font = ExtResource("1_h21gv")
-theme_override_font_sizes/font_size = 64
+theme_override_font_sizes/font_size = 48
 text = "Play again
 "
 script = ExtResource("2_ktek4")
