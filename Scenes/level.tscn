@@ -37,4 +37,4 @@ visible = false
 [node name="reaction_options_ui" parent="." instance=ExtResource("8_lt7mv")]
 
 [node name="Jester" parent="." instance=ExtResource("9_e283u")]
-position = Vector2(1571, 957)
+position = Vector2(1427, 956)
