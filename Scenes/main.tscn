@@ -10,5 +10,6 @@
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Node"]
 stream = ExtResource("1_xg7e2")
 autoplay = true
+bus = &"Music"
 
 [node name="StartScreen" parent="." instance=ExtResource("2_d1pbw")]
