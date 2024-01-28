@@ -10,5 +10,5 @@ func playAnimationForCards(cards:Array[Card], onCompletedCallback:Callable):
 		tween.tween_callback(func():anim.play(card.word))
 		tween.tween_interval(1.5)
 	
-	tween.tween_callback(anim.stop)
+	tween.tween_callback(func():anim.play("Idle"))
 	tween.tween_callback(onCompletedCallback)

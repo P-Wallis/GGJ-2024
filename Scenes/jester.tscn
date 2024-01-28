@@ -223,17 +223,6 @@ animations = [{
 "speed": 5.0
 }, {
 "frames": [{
-"duration": 1.0,
-"texture": ExtResource("31_5lvgn")
-}, {
-"duration": 2.0,
-"texture": ExtResource("32_udnn5")
-}],
-"loop": true,
-"name": &"Slip",
-"speed": 5.0
-}, {
-"frames": [{
 "duration": 2.0,
 "texture": ExtResource("33_qhjp4")
 }, {
@@ -256,6 +245,17 @@ animations = [{
 "speed": 5.0
 }, {
 "frames": [{
+"duration": 1.0,
+"texture": ExtResource("31_5lvgn")
+}, {
+"duration": 2.0,
+"texture": ExtResource("32_udnn5")
+}],
+"loop": true,
+"name": &"Trip",
+"speed": 5.0
+}, {
+"frames": [{
 "duration": 2.0,
 "texture": ExtResource("37_xmwsc")
 }, {
@@ -263,7 +263,7 @@ animations = [{
 "texture": ExtResource("38_xujlj")
 }],
 "loop": true,
-"name": &"Viking",
+"name": &"Vikings",
 "speed": 5.0
 }, {
 "frames": [{
@@ -284,5 +284,4 @@ script = ExtResource("1_sa8j2")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -450)
 sprite_frames = SubResource("SpriteFrames_nb5su")
-animation = &"Kitchen"
-frame_progress = 0.181475
+animation = &"Idle"
