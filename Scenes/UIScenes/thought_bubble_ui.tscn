@@ -1,7 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://dui72aep4hato"]
+[gd_scene load_steps=6 format=3 uid="uid://dui72aep4hato"]
 
+[ext_resource type="Script" path="res://Scripts/UI/thought_bubble_ui.gd" id="1_2cuyb"]
 [ext_resource type="Texture2D" uid="uid://cvrlt3dsfd6k7" path="res://Assets/Sprites/Cards UI/King_Bubble.png" id="1_sjp6r"]
 [ext_resource type="FontFile" uid="uid://dd7gumdjab30j" path="res://Assets/Fonts/GRILLEDCHEESE_BTN.TTF" id="2_1c47u"]
+[ext_resource type="Resource" uid="uid://ce1rnnislk1in" path="res://CardRelationships/CardPairs.tres" id="2_4mkcm"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_jkk38"]
 font = ExtResource("2_1c47u")
@@ -9,6 +11,8 @@ font_size = 50
 font_color = Color(0.4, 0.12549, 0.101961, 1)
 
 [node name="thought_bubble_ui" type="CanvasLayer"]
+script = ExtResource("1_2cuyb")
+pairInfo = ExtResource("2_4mkcm")
 
 [node name="SpeechBubble" type="Control" parent="."]
 layout_mode = 3
