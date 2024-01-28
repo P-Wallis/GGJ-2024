@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="MessageResource" load_steps=11 format=3 uid="uid://b8uhwy5srtjuk"]
+
+[ext_resource type="Resource" uid="uid://3dptq7r03gyb" path="res://CardData/Weapons.tres" id="1_5d5dd"]
+[ext_resource type="Script" path="res://Scripts/messageResource.gd" id="1_bak1p"]
+[ext_resource type="Resource" uid="uid://bpi64r4ibcdx3" path="res://CardData/Vikings.tres" id="1_fqab6"]
+[ext_resource type="Resource" uid="uid://fnconu0fn64b" path="res://CardData/Gate.tres" id="2_e7f4p"]
+[ext_resource type="Resource" uid="uid://cadnlr2e7b5pb" path="res://CardData/Theft.tres" id="2_i4lor"]
+[ext_resource type="Resource" uid="uid://b1u2e874fxpqi" path="res://CardData/Fire.tres" id="3_c83v4"]
+[ext_resource type="Resource" uid="uid://cs78gjqnw0pl" path="res://CardData/Death.tres" id="4_tedw7"]
+[ext_resource type="Resource" uid="uid://dwoyb72dui4b0" path="res://CardData/Queen.tres" id="5_g3d1m"]
+[ext_resource type="Resource" uid="uid://bj6j17xyahdnm" path="res://CardData/Money.tres" id="6_5vrmw"]
+[ext_resource type="Resource" uid="uid://crrf65cctp80f" path="res://CardData/Treasury.tres" id="7_074k8"]
+
+[resource]
+script = ExtResource("1_bak1p")
+message = "The enemies are attacking the castle!"
+difficulty = 0
+requiredCards = Array[Resource("res://Scripts/cardResource.gd")]([ExtResource("1_fqab6"), ExtResource("2_e7f4p")])
+optionalCards = Array[Resource("res://Scripts/cardResource.gd")]([ExtResource("1_5d5dd"), ExtResource("2_i4lor"), ExtResource("3_c83v4"), ExtResource("4_tedw7"), ExtResource("5_g3d1m"), ExtResource("6_5vrmw"), ExtResource("7_074k8")])
+instantFailCards = Array[Resource("res://Scripts/cardResource.gd")]([])

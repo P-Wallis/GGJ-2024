@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="MessageResource" load_steps=8 format=3 uid="uid://tcy7bt3xdtuj"]
+
+[ext_resource type="Resource" uid="uid://cadnlr2e7b5pb" path="res://CardData/Theft.tres" id="2_ybsp2"]
+[ext_resource type="Resource" uid="uid://cifc1lpx60gyi" path="res://CardData/King.tres" id="3_v3j14"]
+[ext_resource type="Resource" uid="uid://dwoyb72dui4b0" path="res://CardData/Queen.tres" id="5_oaaw0"]
+[ext_resource type="Resource" uid="uid://cuyc3p7470gnx" path="res://CardData/Baron.tres" id="5_wl088"]
+[ext_resource type="Resource" uid="uid://bj6j17xyahdnm" path="res://CardData/Money.tres" id="6_nfrf6"]
+[ext_resource type="Resource" uid="uid://crrf65cctp80f" path="res://CardData/Treasury.tres" id="7_6mgpi"]
+[ext_resource type="Script" path="res://Scripts/messageResource.gd" id="10_lkalo"]
+
+[resource]
+script = ExtResource("10_lkalo")
+message = "The Baron has embezzled this year's taxes."
+difficulty = 2
+requiredCards = Array[Resource("res://Scripts/cardResource.gd")]([ExtResource("5_wl088"), ExtResource("2_ybsp2"), ExtResource("6_nfrf6")])
+optionalCards = Array[Resource("res://Scripts/cardResource.gd")]([ExtResource("7_6mgpi"), ExtResource("3_v3j14"), ExtResource("5_oaaw0")])
