@@ -18,7 +18,7 @@ func getFailMessage(cards:Array[Card]):
 	var idea:String = "nothing in particular"
 	if(ideas[mood].size() > 0):
 		idea = ideas[mood][randi() % ideas[mood].size()]
-	var moodPair:Array[Card] = [cards[0], cards[1]]
+	var _moodPair:Array[Card] = [cards[0], cards[1]]
 	if(pairs[mood].size() > 0):
 		moodPair = pairs[mood][randi() % pairs[mood].size()]
 	else:
