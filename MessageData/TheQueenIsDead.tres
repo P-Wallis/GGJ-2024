@@ -1,11 +1,13 @@
-[gd_resource type="Resource" script_class="MessageResource" load_steps=8 format=3 uid="uid://dc1mho6dto4lg"]
+[gd_resource type="Resource" script_class="MessageResource" load_steps=10 format=3 uid="uid://dc1mho6dto4lg"]
 
 [ext_resource type="Resource" uid="uid://3dptq7r03gyb" path="res://CardData/Weapons.tres" id="1_c3gca"]
 [ext_resource type="Resource" uid="uid://b1u2e874fxpqi" path="res://CardData/Fire.tres" id="2_n1o2e"]
 [ext_resource type="Resource" uid="uid://dk3rlsl3i0v0l" path="res://CardData/Eat.tres" id="3_yfe43"]
 [ext_resource type="Resource" uid="uid://dawd57rt7p24n" path="res://CardData/Banana.tres" id="4_6rpuw"]
+[ext_resource type="Resource" uid="uid://l01sryuxn75e" path="res://CardData/Trip.tres" id="5_2ymn5"]
 [ext_resource type="Resource" uid="uid://dwoyb72dui4b0" path="res://CardData/Queen.tres" id="5_ivl2y"]
 [ext_resource type="Resource" uid="uid://cs78gjqnw0pl" path="res://CardData/Death.tres" id="6_1y64t"]
+[ext_resource type="Resource" uid="uid://4pc6pcu3svsk" path="res://CardData/Bathroom.tres" id="6_youmk"]
 [ext_resource type="Script" path="res://Scripts/messageResource.gd" id="7_hkbac"]
 
 [resource]
@@ -14,4 +16,4 @@ message = "The Queen has died."
 successMessage = "My beloved is dead!? How awful! ... Do you know any hot babes around the court?"
 difficulty = 1
 requiredCards = Array[Resource("res://Scripts/cardResource.gd")]([ExtResource("5_ivl2y"), ExtResource("6_1y64t")])
-optionalCards = Array[Resource("res://Scripts/cardResource.gd")]([ExtResource("1_c3gca"), ExtResource("2_n1o2e"), ExtResource("3_yfe43"), ExtResource("4_6rpuw")])
+optionalCards = Array[Resource("res://Scripts/cardResource.gd")]([ExtResource("1_c3gca"), ExtResource("2_n1o2e"), ExtResource("3_yfe43"), ExtResource("4_6rpuw"), ExtResource("5_2ymn5"), ExtResource("6_youmk")])

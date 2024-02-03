@@ -10,8 +10,8 @@
 
 [resource]
 script = ExtResource("10_5e2xt")
-message = "The peasants are chanting for you"
-successMessage = "Excellent! I will greet them and bask in my glory "
+message = "The peasants are chanting for you!"
+successMessage = "Excellent! I will greet them and bask in my glory."
 difficulty = 1
 requiredCards = Array[Resource("res://Scripts/cardResource.gd")]([ExtResource("4_1ykas"), ExtResource("5_2wru1"), ExtResource("6_tb880")])
 optionalCards = Array[Resource("res://Scripts/cardResource.gd")]([ExtResource("1_5ops7"), ExtResource("5_2b3y8"), ExtResource("9_qyti3")])

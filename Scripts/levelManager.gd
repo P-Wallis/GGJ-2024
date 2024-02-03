@@ -6,7 +6,8 @@ enum LevelPhase {
 	CHOOSE_CARDS,
 	DANCE,
 	KING_REACTION,
-	FAILED_COMMUNICATION
+	FAILED_COMMUNICATION,
+	SUCCEEDED_COMMUNICATION
 }
 
 var phase:LevelPhase
@@ -44,6 +45,12 @@ func OnChooseCardsComplete():
 func GoToPhaseChooseCards():
 	GoToPhase(LevelPhase.CHOOSE_CARDS)
 	
+func GoToPhaseFailedCommunication():
+	GoToPhase(LevelPhase.FAILED_COMMUNICATION)
+	
+func GoToPhaseSucceededCommunication():
+	GoToPhase(LevelPhase.SUCCEEDED_COMMUNICATION)
+	
 func GoToNextLevel():
 	messageCount += 1
 	if messageCount < messages.size():
@@ -66,11 +73,7 @@ func GoToPhase(newPhase:LevelPhase):
 	match (phase):
 		LevelPhase.MESSAGE:
 			# Get the message and display it
-			messageUI.visible = true
-			messageUI.messageLabel.text = messages[messageCount].message
-			if(!messageUI.button.pressed.is_connected(self.GoToPhaseChooseCards)):
-				messageUI.button.pressed.connect(self.GoToPhaseChooseCards)
-			pass
+			AssignMessageUI(messages[messageCount].message, self.GoToPhaseChooseCards)
 		LevelPhase.CHOOSE_CARDS:
 			#  show the choosing UI
 			chooseUI.visible = true
@@ -87,49 +90,73 @@ func GoToPhase(newPhase:LevelPhase):
 			# Show "Done" or "Retry" buttons
 			thoughtUI.visible = true
 			thoughtUI.ShowKingThought(cards, messages[messageCount])
-			optionsUI.visible = true
 			var success = messages[messageCount].DoCardsMatchTheMessage(cards)
 			king.playResponse(success, cardPairs.GetEmotionInfo(cards)["mood"])
 			
 			if(success):
 				retryCount = 0
-				# King success react
-				optionsUI.button.text = "Done"
-				if(optionsUI.button.pressed.is_connected(self.GoToPhaseChooseCards)):
-					optionsUI.button.pressed.disconnect(self.GoToPhaseChooseCards)
-				if(!optionsUI.button.pressed.is_connected(self.GoToNextLevel)):
-					optionsUI.button.pressed.connect(self.GoToNextLevel)
+				AssignOptionButton("Done", self.GoToPhaseSucceededCommunication)
 			else:
 				if retryCount < 2:
-					# King Fail react
-					optionsUI.button.text = "Retry"
+					AssignOptionButton("Retry", self.GoToPhaseChooseCards)
 					retryCount += 1
-					if(optionsUI.button.pressed.is_connected(self.GoToNextLevel)):
-						optionsUI.button.pressed.disconnect(self.GoToNextLevel)
-					if(!optionsUI.button.pressed.is_connected(self.GoToPhaseChooseCards)):
-						optionsUI.button.pressed.connect(self.GoToPhaseChooseCards)
 				else:
 					retryCount = 0
-					self.GoToPhase(LevelPhase.FAILED_COMMUNICATION) 
-			pass
+					AssignOptionButton("Done", self.GoToPhaseFailedCommunication)
 		LevelPhase.FAILED_COMMUNICATION:
-			# Get the message and display it
-			messageUI.visible = true
-			messageUI.messageLabel.text = "You failed to communicate the message. Moving on..."
-			if(!messageUI.button.pressed.is_connected(self.SkipCurrentLevel)):
-				messageUI.button.pressed.connect(self.SkipCurrentLevel)
-			pass
-			
+			AssignMessageUI("You've failed to communicate the message. Let's try the next one...", self.SkipCurrentLevel)
+		LevelPhase.SUCCEEDED_COMMUNICATION:
+			var successMessage:String = "Good work— the king got the message!"
+			if messageCount < messages.size()-1:
+				successMessage += " There's another one to deliver, though..."
+			AssignMessageUI(successMessage, self.GoToNextLevel)
+	
+func AssignOptionButton(text:String, callback:Callable):
+	optionsUI.visible = true
+	
+	# Disconnect everything first
+	if(optionsUI.button.pressed.is_connected(self.GoToPhaseChooseCards)):
+		optionsUI.button.pressed.disconnect(self.GoToPhaseChooseCards)
+	if(optionsUI.button.pressed.is_connected(self.GoToPhaseFailedCommunication)):
+		optionsUI.button.pressed.disconnect(self.GoToPhaseFailedCommunication)
+	if(optionsUI.button.pressed.is_connected(self.GoToPhaseSucceededCommunication)):
+		optionsUI.button.pressed.disconnect(self.GoToPhaseSucceededCommunication)
+		
+	# assign the new stuff
+	optionsUI.button.text = text
+	if(!optionsUI.button.pressed.is_connected(callback)):
+		optionsUI.button.pressed.connect(callback)
+		
+func AssignMessageUI(text:String, callback:Callable):
+	messageUI.visible = true
+	
+	# Disconnect everything first
+	if(messageUI.button.pressed.is_connected(self.GoToPhaseChooseCards)):
+		messageUI.button.pressed.disconnect(self.GoToPhaseChooseCards)
+	if(messageUI.button.pressed.is_connected(self.SkipCurrentLevel)):
+		messageUI.button.pressed.disconnect(self.SkipCurrentLevel)
+	if(messageUI.button.pressed.is_connected(self.GoToNextLevel)):
+		messageUI.button.pressed.disconnect(self.GoToNextLevel)
+		
+	# assign the new stuff
+	messageUI.messageLabel.text = text
+	if(!messageUI.button.pressed.is_connected(callback)):
+		messageUI.button.pressed.connect(callback)
+	
+		
 func GoToWinOrFailScreen(didWin):
+	levelNode.queue_free()
+	var scene_to_instance = load("res://Scenes/win_or_fail_screen.tscn")
+	var instance = scene_to_instance.instantiate()
+	
 	if didWin:
 		print('win')
-		levelNode.queue_free()
-		var scene_to_instance = load("res://Scenes/win_or_fail_screen.tscn")
-		var instance = scene_to_instance.instantiate()
 		instance.Win()
-		get_tree().get_root().add_child(instance)
 	else:
 		print('fail')
+		instance.Lose()
+		
+	get_tree().get_root().add_child(instance)
 		
 func SkipCurrentLevel():
 	messageUI.button.pressed.disconnect(self.SkipCurrentLevel)
